@@ -40,8 +40,7 @@ import Vue from "vue";
 import "./nav.styles.scss";
 import DataJson from "@/data-source/app.json";
 import TopBanner from "./top-banner.vue";
-import store from "@/store/index";
-import { mapActions, mapMutations } from "vuex";
+import { mapActions } from "vuex";
 
 const NavBar = Vue.extend({
   name: "NavBar",

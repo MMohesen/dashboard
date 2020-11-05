@@ -32,7 +32,6 @@ import Vue from "vue";
 import "./nav.styles.scss";
 import DataJson from "@/data-source/app.json";
 import { mapActions } from "vuex";
-import store from "@/store/index";
 
 const TopBanner = Vue.extend({
   name: "TopBanner",

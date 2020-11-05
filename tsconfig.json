@@ -1,6 +1,7 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es5",
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",
@@ -10,9 +11,19 @@
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "noEmit": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "allowJs": true,
+    "checkJs": false,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "baseUrl": ".",
     "types": ["webpack-env", "jest", "vuetify"],
     "paths": {
@@ -22,11 +33,10 @@
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.js",
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "build", "dist", "src/**/*.js"]
 }

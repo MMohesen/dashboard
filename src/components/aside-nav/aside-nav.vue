@@ -23,10 +23,8 @@
 import Vue from "vue";
 import "./aside-nav.styles.scss";
 import DataJson from "@/data-source/app.json";
-const userLang = "en" || "ar";
-const translation = { ...DataJson?.translation[userLang] };
+
 const menueTrans = { ...DataJson?.translation.en.menu };
-import store from "@/store/index";
 
 const AsideNav = Vue.extend({
   name: "AsideNav",
@@ -53,7 +51,7 @@ const AsideNav = Vue.extend({
       get(): boolean {
         return this.$store.state?.Nav?.leftSide;
       },
-      set(bool: boolean): void {},
+      set(): void {},
     },
   },
 });
