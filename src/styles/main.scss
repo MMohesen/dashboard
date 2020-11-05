@@ -1,0 +1,13 @@
+@import "~vuetify/src/styles/styles.sass";
+
+.v-main {
+  background: map-get($grey, lighten-4);
+}
+.v-main__wrap {
+  display: flex;
+  flex: 1;
+}
+.wrapper {
+  padding: 0.625rem;
+  width: 100%;
+}

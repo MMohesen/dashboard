@@ -1,0 +1,148 @@
+@import "~vuetify/src/styles/styles.sass";
+.app-nav-bar {
+  position: relative;
+
+  .banar-nav {
+    height: 44px !important;
+    color: #fff;
+    .v-toolbar__content {
+      height: 44px !important;
+    }
+    .trial-maessage {
+      margin: 0px;
+      color: #ffffffad;
+      font-size: 0.75rem;
+    }
+    .lang {
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .vertical-spacer {
+      width: 0.0625rem;
+      display: flex;
+      height: 1.25rem;
+      margin: 0rem 0.625rem;
+      background-color: #fff;
+    }
+  }
+
+  .brand-box {
+    min-width: 15.75rem;
+
+    .v-image {
+      max-width: 35px;
+    }
+
+    .app-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      line-height: 2rem;
+      margin: 0rem 0.625rem;
+    }
+  }
+
+  .btn-action {
+    &.v-icon {
+      margin: 0rem 0.3125rem;
+      cursor: pointer;
+      color: #000 !important;
+      border: 0.0625rem solid transparent;
+      padding: 0.8rem 0.9rem;
+      &:hover {
+        opacity: 0.6;
+        border: 0.0625rem solid map-get($grey, lighten-3);
+      }
+    }
+  }
+
+  .page-title {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1rem;
+    text-transform: capitalize;
+  }
+
+  .btn-link {
+    height: 64px !important;
+    border-bottom: 1px solid transparent;
+    border-radius: 0px;
+    background: transparent;
+    .v-btn__content {
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 0.9rem;
+      text-transform: capitalize;
+    }
+
+    &:hover,
+    &.active {
+      background: transparent !important;
+      border-bottom: 1px solid #000 !important;
+    }
+
+    &.v-btn:before {
+      background-color: transparent !important;
+    }
+  }
+
+  .user-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border: 0.0625rem solid map-get($grey, lighten-3);
+    border-radius: 0.0625rem;
+    padding: 0.4rem 0.625rem;
+
+    .user-avatar {
+      font-size: 2.25rem;
+    }
+
+    .user-details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      .user-name {
+        font-size: 0.9375rem;
+        line-height: 1rem;
+        text-transform: capitalize;
+        font-weight: bold;
+      }
+
+      .user-type {
+        font-weight: 400;
+        text-transform: capitalize;
+        font-size: 0.625rem;
+        line-height: 1rem;
+      }
+    }
+  }
+
+  .overlay {
+    z-index: 9;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000a;
+    overflow: hidden;
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
+  .drawer {
+    z-index: 10;
+    position: fixed;
+    min-width: 0px;
+    height: 100vh;
+    background-color: #fff;
+    right: 0px;
+    transition: min-width 0.5s, opacity 0.2s;
+    &.show {
+      min-width: 600px;
+    }
+  }
+}

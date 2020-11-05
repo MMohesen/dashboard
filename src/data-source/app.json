@@ -1,0 +1,62 @@
+{
+  "app": {
+    "name": "McDonalds"
+  },
+  "user": {
+    "name": "dana amar",
+    "type": "admin"
+  },
+  "translation": {
+    "en": {
+      "arabic": "العربية",
+      "banner_message": "You have 7 days left in your trial",
+      "catalog": "Catalog",
+      "categories": "Categories",
+      "items": "Items",
+      "combos": "Combos",
+      "menu": {
+        "catalog": "Catalog",
+        "dashboard": "Dashboard",
+        "inventroy": "Inventroy",
+        "reports": "Reports",
+        "customers": "Customers",
+        "intgration": "Intgration",
+        "settings": "Settings"
+      }
+    },
+    "ar": {
+      "arabic": "العربية",
+      "banner_message": "You have 7 days left in your trial",
+      "catalog": "Catalog",
+      "categories": "Categories",
+      "items": "Items",
+      "combos": "Combos",
+      "menu": {
+        "catalog": "Catalog",
+        "dashboard": "Dashboard",
+        "inventroy": "Inventroy",
+        "reports": "Reports",
+        "customers": "Customers",
+        "intgration": "Intgration",
+        "settings": "Settings"
+      }
+    }
+  },
+  "dataTable": {
+    "header": ["id", "name", "image", "dscription"],
+    "rows": [
+      {
+        "id": 1,
+        "name": "Iphon X",
+        "image": "",
+        "description": "Iphone X description"
+      },
+      {
+        "id": 2,
+        "name": "Iphon X Max",
+        "image": "",
+        "description": "Iphone X Max description"
+      }
+    ]
+  }
+}
