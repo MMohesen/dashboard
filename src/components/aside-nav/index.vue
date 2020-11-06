@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import "./aside-nav.styles.scss";
+import "./styles.scss";
 import DataJson from "@/data-source/app.json";
 
 const menueTrans = { ...DataJson?.translation.en.menu };

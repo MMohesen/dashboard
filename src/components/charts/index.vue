@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import LineChart from "./LineChart.js";
-import "./chart.styles.scss";
+import LineChart from "./line.js";
+import "./styles.scss";
 
 export default {
   components: {

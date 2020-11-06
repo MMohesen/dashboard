@@ -1,5 +1,5 @@
 import axios from "axios";
-import ENDPOINTS from "./ENDPOINTS";
+import ENDPOINTS from "./end-points";
 import Vue from "vue";
 
 axios.defaults.baseURL = ENDPOINTS.BASE_URL;

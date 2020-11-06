@@ -37,7 +37,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import "./nav.styles.scss";
+import "./styles.scss";
 import DataJson from "@/data-source/app.json";
 import TopBanner from "./top-banner.vue";
 import { mapActions } from "vuex";

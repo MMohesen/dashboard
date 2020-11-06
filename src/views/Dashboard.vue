@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import Charts from "@/components/charts/index.vue";
+import { Charts } from "@/components";
 
 @Component({
   components: {

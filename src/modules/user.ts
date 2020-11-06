@@ -1,4 +1,4 @@
-import User from "@/interface/user.ts";
+import User from "@/interface/user.interface";
 class Users implements User {
   id: number = 0;
   email: string = "";

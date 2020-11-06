@@ -1,8 +1,5 @@
-import Vue from "vue";
-import Vuex from "vuex";
 import axios from "@/providers/requests";
-import ENDPOINTS from "@/providers/ENDPOINTS";
-Vue.use(Vuex);
+import ENDPOINTS from "@/providers/end-points";
 
 const DataTable = {
   namespaced: true,

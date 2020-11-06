@@ -12,85 +12,97 @@
         class="btn-apps"
         color="#fff"
         id="drawer-toggole"
-        v-on:click="handelOnToggleDrawer"
+        v-on:click="toggoleDrawer"
       >
         apps
       </v-icon>
     </v-app-bar>
+    <AppDrawer :isVisible="isDrawerVisible" :handleOnClose="toggoleDrawer">
+      <template #footer>
+        Test Append Footer
+      </template>
+      <template #header>
+        prepend
+      </template>
+      <template #body>
+        <v-list dense>
+          <v-list-item v-for="(item, index) in items" :key="index" link>
+            <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
 
-    <div class="overlay" :class="getDrawerClass"></div>
-    <div
-      class="drawer"
-      :class="getDrawerClass"
-      v-handle-click-outside="handelOnOutClicked"
-    ></div>
+            <v-list-item-content style="min=width:500">
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </template>
+    </AppDrawer>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import "./nav.styles.scss";
+import "./styles.scss";
 import DataJson from "@/data-source/app.json";
-import { mapActions } from "vuex";
+import Table from "../table/index.vue";
+import { AppDrawer } from "@/components";
 
 const TopBanner = Vue.extend({
   name: "TopBanner",
+  components: { Table, AppDrawer },
   data() {
     return {
       translation: { ...DataJson?.translation.en },
+      isDrawerVisible: false,
+      items: [
+        { title: "Home", icon: "mdi-view-dashboard" },
+        {
+          title:
+            "AboutAboutAboutAboutAboutAboutAboutAboutAboutAboutAboutAboutAboutAbout",
+          icon: "mdi-forum",
+        },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+        { title: "About", icon: "mdi-forum" },
+      ],
     };
   },
-  computed: {
-    getDrawerClass() {
-      return this.$store.state?.Nav?.drawer ? "show" : "";
-    },
-  },
   methods: {
-    ...mapActions({
-      toggleDrawer: "Nav/setDrawer",
-    }),
-    /**
-     * handel on click toggle drawer
-     * @returns {void}
-     */
-    handelOnToggleDrawer() {
-      this.toggleDrawer();
-    },
-
-    /**
-     * handel the event on user click out to close the drawer
-     * @param event
-     */
-    handelOnOutClicked() {
-      if (this.$store.state?.Nav?.drawer) this.toggleDrawer();
-    },
-  },
-
-  directives: {
-    /**
-     * directive to handel user click out of the drawer
-     * @directive
-     */
-    "handle-click-outside": {
-      bind: function(el: any, binding) {
-        const { bubble } = binding.modifiers;
-        const clickHandler = (e: any) => {
-          if (
-            bubble ||
-            (!el.contains(e.target) &&
-              el !== e.target &&
-              e.target.id !== "drawer-toggole")
-          ) {
-            binding.value(e);
-          }
-        };
-        el.__vueHandleClickOutside__ = clickHandler;
-        document.addEventListener("click", clickHandler, true);
-      },
-      unbind: function(el: any) {
-        document.removeEventListener("click", el.__vueHandleClickOutside__);
-        el.__vueHandleClickOutside__ = null;
-      },
+    toggoleDrawer() {
+      this.isDrawerVisible = !this.isDrawerVisible;
     },
   },
 });

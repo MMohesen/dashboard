@@ -2,9 +2,9 @@ module.exports = {
   transpileDependencies: ["vuetify"],
   configureWebpack: {
     performance: {
-      hints: "warning", // enum
-      maxAssetSize: 1048576, // int (in bytes)  => ~1M,
-      maxEntrypointSize: 1048576, // int (in bytes) => ~1M
+      hints: false, // enum
+      maxAssetSize: 10485760, // int (in bytes)  => ~10M,
+      maxEntrypointSize: 10485760, // int (in bytes) => ~10M
     },
   },
 };

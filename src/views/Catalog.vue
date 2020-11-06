@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import DataTable from "@/components/table/index.vue";
+import { Table as DataTable } from "@/components";
 
 @Component({
   components: {
