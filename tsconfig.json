@@ -27,7 +27,8 @@
     "baseUrl": ".",
     "types": ["webpack-env", "jest", "vuetify"],
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@casl/vue/patch": ["src/shims-ability.d.ts"]
     },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
