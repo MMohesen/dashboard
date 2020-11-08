@@ -8,7 +8,9 @@ import VueCookies from "vue-cookies";
 import { abilitiesPlugin } from "@casl/vue";
 import ability from "@/services/ability";
 import { Can } from "@casl/vue";
+import Vuelidate from "vuelidate";
 
+Vue.use(Vuelidate);
 Vue.component("Can", Can);
 Vue.use(VueCookies);
 Vue.use(abilitiesPlugin);
