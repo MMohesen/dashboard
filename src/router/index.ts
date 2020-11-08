@@ -38,4 +38,11 @@ const router = new VueRouter({
   routes,
 });
 
+router.beforeEach((to, from, next) => {
+  //TODO: Check the user authrization
+  console.log("to", to);
+  console.log("from", from);
+  console.log("next", next);
+});
+
 export default router;
