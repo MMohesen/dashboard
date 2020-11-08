@@ -1,6 +1,9 @@
 <template>
   <div class="wrapper">
     <v-row>
+      <v-col lg> <h1>Drawer</h1></v-col>
+    </v-row>
+    <v-row>
       <v-col md>
         <v-btn depressed color="primary" @click="toggleDrawer">
           Open drawer
@@ -13,7 +16,9 @@
         </v-btn>
       </v-col>
     </v-row>
-
+    <v-row>
+      <v-col lg> <h1>Dialog</h1></v-col>
+    </v-row>
     <v-row>
       <v-col lg>
         <v-btn color="primary" @click="toggleDialog">
@@ -22,6 +27,9 @@
       </v-col>
     </v-row>
 
+    <v-row>
+      <v-col lg> <h1>ACL</h1></v-col>
+    </v-row>
     <v-row>
       <v-col md>
         <v-btn depressed color="green" @click="setUserAbilityRead">
