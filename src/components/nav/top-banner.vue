@@ -2,11 +2,13 @@
   <div class="app-nav-bar">
     <v-app-bar flat color="dark" class="banar-nav" height="44">
       <p class="trial-maessage">
-        {{ this.translation.banner_message }}
+        {{ this.$vuetify.lang.t("$vuetify.banner_message") }}
       </p>
       <v-spacer></v-spacer>
 
-      <label class="lang">{{ this.translation.arabic }}</label>
+      <label class="lang" @click="switchAppLang">
+        {{ this.$vuetify.lang.t("$vuetify.nextLang") }}
+      </label>
       <span class="vertical-spacer"></span>
       <v-icon class="btn-apps" color="#fff" id="drawer-toggole">
         apps
@@ -28,6 +30,18 @@ const TopBanner = Vue.extend({
     return {
       translation: { ...DataJson?.translation.en },
     };
+  },
+  methods: {
+    switchAppLang(): void {
+      if (this.$vuetify.lang.current === "ar") {
+        this.$vuetify.lang.current = "en";
+        this.$vuetify.rtl = false;
+        return;
+      }
+
+      this.$vuetify.lang.current = "ar";
+      this.$vuetify.rtl = true;
+    },
   },
 });
 export default TopBanner;

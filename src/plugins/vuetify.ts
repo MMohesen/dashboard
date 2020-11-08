@@ -5,6 +5,7 @@ import Vuetify from "vuetify/lib";
 import colors from "@/config/colors";
 
 Vue.use(Vuetify);
+import DataJson from "@/data-source/app.json";
 
 export default new Vuetify({
   rtl: false,
@@ -21,5 +22,16 @@ export default new Vuetify({
         ...colors,
       },
     },
+  },
+  lang: {
+    locales: {
+      en: {
+        ...DataJson?.translation.en,
+      },
+      ar: {
+        ...DataJson?.translation.ar,
+      },
+    },
+    current: "en",
   },
 });

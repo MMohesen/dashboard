@@ -8,7 +8,7 @@
   },
   "translation": {
     "en": {
-      "arabic": "العربية",
+      "nextLang": "العربية",
       "banner_message": "You have 7 days left in your trial",
       "catalog": "Catalog",
       "categories": "Categories",
@@ -25,20 +25,20 @@
       }
     },
     "ar": {
-      "arabic": "العربية",
-      "banner_message": "You have 7 days left in your trial",
-      "catalog": "Catalog",
-      "categories": "Categories",
-      "items": "Items",
-      "combos": "Combos",
+      "nextLang": "ِEnglish",
+      "banner_message": "لديك 7 أيام متبقية في الإصدار التجريبي",
+      "catalog": "فهرس",
+      "categories": "التصنيفات",
+      "items": "العناصر",
+      "combos": "المجموعات",
       "menu": {
-        "catalog": "Catalog",
-        "dashboard": "Dashboard",
-        "inventroy": "Inventroy",
-        "reports": "Reports",
-        "customers": "Customers",
-        "intgration": "Intgration",
-        "settings": "Settings"
+        "catalog": "فهرس",
+        "dashboard": "لوحة القيادة",
+        "inventroy": "المخزون",
+        "reports": "التقارير",
+        "customers": "العملاء",
+        "intgration": "دمج",
+        "settings": "إعدادات"
       }
     }
   },

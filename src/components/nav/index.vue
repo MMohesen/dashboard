@@ -8,15 +8,17 @@
       </div>
       <div class="links">
         <v-icon class="btn-action" @click="toggleLeftSide">menu</v-icon>
-        <label class="page-title">{{ this.translation.catalog }} </label>
+        <label class="page-title">{{
+          this.$vuetify.lang.t("$vuetify.catalog")
+        }}</label>
         <v-btn text href="/fooRoute" class="btn-link"
-          >{{ this.translation.categories }}
+          >{{ this.$vuetify.lang.t("$vuetify.catalog") }}
         </v-btn>
-        <v-btn text href="/fooRoute" class="btn-link"
-          >{{ this.translation.items }}
+        <v-btn text href="/fooRoute" class="btn-link">
+          {{ this.$vuetify.lang.t("$vuetify.items") }}
         </v-btn>
-        <v-btn text href="/fooRoute" class="btn-link"
-          >{{ this.translation.combos }}
+        <v-btn text href="/fooRoute" class="btn-link">
+          {{ this.$vuetify.lang.t("$vuetify.combos") }}
         </v-btn>
       </div>
       <v-spacer />

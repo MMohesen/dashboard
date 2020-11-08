@@ -1,17 +1,23 @@
 <template>
   <div class="wrapper">
     <v-row>
-      <v-col lg>
+      <v-col md>
         <v-btn depressed color="primary" @click="toggleDrawer">
           Open drawer
+        </v-btn>
+      </v-col>
+
+      <v-col md>
+        <v-btn depressed color="primary" @click="toggleDrawer2">
+          Open drawer 2
         </v-btn>
       </v-col>
     </v-row>
 
     <v-row>
       <v-col lg>
-        <v-btn depressed color="primary" @click="toggleDialog">
-          Open Fullscreen Dialog
+        <v-btn color="primary" @click="toggleDialog">
+          Open Dialog
         </v-btn>
       </v-col>
     </v-row>
@@ -48,12 +54,7 @@
         prepend
       </template>
       <template #body>
-        <v-list-item
-          v-for="item in items"
-          :key="item.text"
-          link
-          :to="item.href"
-        >
+        <v-list-item v-for="item in items" :key="item.text" link>
           <v-list-item-content>
             <v-list-item-title>{{ item.text }}</v-list-item-title>
           </v-list-item-content>
@@ -62,10 +63,26 @@
       </template>
     </AppDrawer>
 
+    <AppDrawer
+      :isVisible="isDrawer2Visible"
+      :handleOnClose="toggleDrawer2"
+      :width="'80vw'"
+    >
+      <template #body>
+        <p>
+          A paragraph is a series of related sentences developing a central
+          idea, called the topic. Try to think about paragraphs in terms of
+          thematic unity: a paragraph is a sentence or a group of sentences that
+          supports one central, unified idea. Paragraphs add one idea at a time
+          to your broader argument.
+        </p>
+      </template>
+    </AppDrawer>
+
     <AppDialog
-      :isVisible="isDialogVisible"
+      :isVisible="!!isDialogVisible"
       :handleOnClose="toggleDialog"
-      :fullscreen="false"
+      :fullscreen="true"
       :width="'auto'"
       :transition="'scroll-x-reverse-transition'"
     >
@@ -98,6 +115,7 @@ export default Vue.extend({
   data() {
     return {
       isDrawerVisible: false,
+      isDrawer2Visible: false,
       isDialogVisible: false,
       alignments: ["start", "center", "end"],
       items: [
@@ -117,6 +135,10 @@ export default Vue.extend({
   methods: {
     toggleDrawer(): void {
       this.isDrawerVisible = !this.isDrawerVisible;
+    },
+
+    toggleDrawer2(): void {
+      this.isDrawer2Visible = !this.isDrawer2Visible;
     },
 
     toggleDialog(): void {

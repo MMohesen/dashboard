@@ -6,7 +6,12 @@
     class="app-aside-nav"
   >
     <v-list dense nav>
-      <v-list-item v-for="item in items" :key="item.title" link :to="item.href">
+      <v-list-item
+        v-for="item in getNavItems"
+        :key="item.title"
+        link
+        :to="item.href"
+      >
         <v-list-item-icon>
           <v-icon>{{ item.icon }}</v-icon>
         </v-list-item-icon>
@@ -22,31 +27,49 @@
 <script lang="ts">
 import Vue from "vue";
 import "./styles.scss";
-import DataJson from "@/data-source/app.json";
-
-const menueTrans = { ...DataJson?.translation.en.menu };
 
 const AsideNav = Vue.extend({
   name: "AsideNav",
-  data() {
-    return {
-      items: [
+  computed: {
+    getNavItems() {
+      return [
         {
-          title: menueTrans?.dashboard,
+          title: this.$vuetify.lang.t("$vuetify.menu.dashboard"),
           icon: "mdi-view-dashboard",
           href: "dashboard",
         },
-        { title: menueTrans?.catalog, icon: "menu_book", href: "catalog" },
-        { title: menueTrans?.inventroy, icon: "archive", href: "inventroy" },
-        { title: menueTrans?.reports, icon: "insights", href: "reports" },
-        { title: menueTrans?.customers, icon: "group", href: "customers" },
-        { title: menueTrans?.intgration, icon: "layers", href: "intgration" },
-        { title: menueTrans?.settings, icon: "settings", href: "settings" },
-      ],
-      right: null,
-    };
-  },
-  computed: {
+        {
+          title: this.$vuetify.lang.t("$vuetify.menu.catalog"),
+          icon: "menu_book",
+          href: "catalog",
+        },
+        // {
+        //   title: this.$vuetify.lang.t("$vuetify.menu.inventroy"),
+        //   icon: "archive",
+        //   href: "inventroy",
+        // },
+        {
+          title: this.$vuetify.lang.t("$vuetify.menu.reports"),
+          icon: "insights",
+          href: "reports",
+        },
+        // {
+        //   title: this.$vuetify.lang.t("$vuetify.menu.customers"),
+        //   icon: "group",
+        //   href: "customers",
+        // },
+        // {
+        //   title: this.$vuetify.lang.t("$vuetify.menu.intgration"),
+        //   icon: "layers",
+        //   href: "intgration",
+        // },
+        {
+          title: this.$vuetify.lang.t("$vuetify.menu.settings"),
+          icon: "settings",
+          href: "settings",
+        },
+      ];
+    },
     getNavStatus: {
       get(): boolean {
         return this.$store.state?.Nav?.leftSide;
