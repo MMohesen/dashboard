@@ -113,13 +113,14 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { Vue } from "vue-property-decorator";
 import { AppDrawer, AppDialog } from "@/components";
 import { AbilityBuilder } from "@casl/ability";
 
 export default Vue.extend({
   components: { AppDrawer, AppDialog },
+
   data() {
     return {
       isDrawerVisible: false,
@@ -140,34 +141,35 @@ export default Vue.extend({
       });
     },
   },
+
   methods: {
-    toggleDrawer(): void {
+    toggleDrawer() {
       this.isDrawerVisible = !this.isDrawerVisible;
     },
 
-    toggleDrawer2(): void {
+    toggleDrawer2() {
       this.isDrawer2Visible = !this.isDrawer2Visible;
     },
 
-    toggleDialog(): void {
+    toggleDialog() {
       this.isDialogVisible = !this.isDialogVisible;
     },
 
-    setUserAbilityRead(): void {
+    setUserAbilityRead() {
       const { can, rules } = new AbilityBuilder();
       can("read", "Book");
       this.$ability.update(rules);
       console.log(this.$ability);
     },
 
-    setUserAbilityManage(): void {
+    setUserAbilityManage() {
       const { can, rules } = new AbilityBuilder();
       can("manage", "Book");
       this.$ability.update(rules);
       console.log(this.$ability);
     },
 
-    setUserAbilityDelete(): void {
+    setUserAbilityDelete() {
       const { can, rules } = new AbilityBuilder();
       can("delete", "Book");
       this.$ability.update(rules);

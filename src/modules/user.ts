@@ -1,10 +1,10 @@
 import User from "@/interface/user.interface";
 class Users implements User {
-  id: number = 0;
-  email: string = "";
-  password: string = "";
-  username: string = "";
-  token: string = "";
+  id = 0;
+  email = "";
+  password = "";
+  username = "";
+  token = "";
 }
 
 export default Users;

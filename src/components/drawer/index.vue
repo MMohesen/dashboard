@@ -26,7 +26,7 @@
   </v-row>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from "vue";
 import "./styles.scss";
 const AppDrawer = Vue.extend({

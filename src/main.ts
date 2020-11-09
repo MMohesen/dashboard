@@ -6,33 +6,31 @@ import store from "./store";
 import vuetify from "./plugins/vuetify";
 import VueCookies from "vue-cookies";
 import { abilitiesPlugin } from "@casl/vue";
-import ability from "@/services/ability";
+import ability from "./services/ability";
 import { Can } from "@casl/vue";
 import Vuelidate from "vuelidate";
 
 Vue.use(Vuelidate);
 Vue.component("Can", Can);
 Vue.use(VueCookies);
-Vue.use(abilitiesPlugin);
-
-import DataJson from "@/data-source/app.json";
+Vue.use(abilitiesPlugin, ability);
 
 Vue.config.productionTip = true;
 Vue.mixin({
   data: function() {
     return {
-      get lang() {
+      get global() {
         return {
-          ...DataJson?.translation["en"],
+          test: "value-test",
         };
       },
     };
   },
 });
+
 new Vue({
   router,
   store,
   vuetify,
-  ability,
   render: (h) => h(App),
 }).$mount("#app");

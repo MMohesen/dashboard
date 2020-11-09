@@ -116,4 +116,5 @@ export default {
     },
   },
 };
+//https://www.mistergoodcat.com/post/vuejs-validation-with-typescript
 </script>
