@@ -10,10 +10,16 @@
         {{ this.$vuetify.lang.t("$vuetify.nextLang") }}
       </label>
       <span class="vertical-spacer"></span>
-      <v-icon class="btn-apps" color="#fff" id="drawer-toggole">
+      <v-icon
+        class="btn-apps"
+        color="#fff"
+        id="dashboard_services_minbar_button"
+        @click="toggleMiniBar"
+      >
         apps
       </v-icon>
     </v-app-bar>
+    <AppMinBar :isVisible="isVisible" :handleOnClose="toggleMiniBar" />
   </div>
 </template>
 
@@ -21,14 +27,15 @@
 import Vue from "vue";
 import "./styles.scss";
 import DataJson from "@/data-source/app.json";
-import Table from "../table/index.vue";
+import AppMinBar from "@/components/miniBar/index.vue";
 
 const TopBanner = Vue.extend({
   name: "TopBanner",
-  components: { Table },
+  components: { AppMinBar },
   data() {
     return {
       translation: { ...DataJson?.translation.en },
+      isVisible: false,
     };
   },
   methods: {
@@ -41,6 +48,10 @@ const TopBanner = Vue.extend({
 
       this.$vuetify.lang.current = "ar";
       this.$vuetify.rtl = true;
+    },
+
+    toggleMiniBar(): void {
+      this.isVisible = !this.isVisible;
     },
   },
 });

@@ -1,0 +1,89 @@
+@import "~vuetify/src/styles/styles.sass";
+.app-min-bar {
+  .min-bar-container {
+    position: fixed;
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+
+    border: 1px solid #ccc;
+    border-color: rgba(0, 0, 0, 0.2);
+    color: #000;
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    outline: none;
+    overflow: visible;
+    position: absolute;
+    left: 8px;
+    right: auto;
+    top: 62px;
+    -webkit-animation: gb__a 0.2s;
+    animation: gb__a 0.2s;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-user-select: text;
+
+    &.right {
+      right: 8px;
+      left: auto;
+
+      &:after {
+        right: 22px;
+        left: auto;
+      }
+      &:before {
+        right: 21px;
+        left: auto;
+      }
+    }
+
+    &.show {
+      display: block;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 14px solid transparent;
+      border-right: 14px solid transparent;
+      border-bottom: 14px solid white;
+      top: -14px;
+      right: 22px;
+      left: 22px;
+      right: auto;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 14px solid #cccccc;
+      top: -15px;
+      left: 21px;
+      right: auto;
+    }
+  }
+  @-webkit-keyframes gb__a {
+    0% {
+      opacity: 0;
+    }
+    80% {
+      opacity: 1;
+    }
+  }
+  @keyframes gb__a {
+    0% {
+      opacity: 0;
+    }
+    80% {
+      opacity: 1;
+    }
+  }
+}

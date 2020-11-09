@@ -1,7 +1,7 @@
 <template>
   <v-row class="app-drawer">
     <v-navigation-drawer
-      right
+      :right="isRight"
       fixed
       hide-overlay
       v-model="isVisible"
@@ -46,6 +46,11 @@ const AppDrawer = Vue.extend({
     },
     width: {
       default: "auto",
+    },
+  },
+  computed: {
+    isRight() {
+      return !this.$vuetify.rtl;
     },
   },
 });
