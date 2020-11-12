@@ -15,6 +15,7 @@ import { NavBar, AsideNavBar } from "@/components";
 import "./styles/index.scss";
 import { AppLoader } from "@/components";
 import { mapGetters } from "vuex";
+import { Lang } from "./services/helper";
 
 const App = Vue.extend({
   name: "App",
@@ -24,14 +25,11 @@ const App = Vue.extend({
     AppLoader,
   },
 
-  created() {
-    this.$store.dispatch("User/singleSignOn");
-
-    return console.log(
-      "this.isLoggedIn() => ",
-      this.isLoggedIn,
-      localStorage.dashboard_user
-    );
+  async beforeCreate() {
+    await this.$store.dispatch("User/singleSignOn");
+    await Lang.prepare();
+    this.$vuetify.lang.current = this.$store.getters["App/lang"];
+    this.$vuetify.rtl = this.$store.getters["App/isRtl"];
   },
 
   computed: {

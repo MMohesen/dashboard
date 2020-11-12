@@ -28,6 +28,7 @@ import Vue from "vue";
 import "./styles.scss";
 import DataJson from "@/data-source/app.json";
 import AppMinBar from "@/components/miniBar/index.vue";
+import { Lang } from "@/services/helper";
 
 const TopBanner = Vue.extend({
   name: "TopBanner",
@@ -43,11 +44,13 @@ const TopBanner = Vue.extend({
       if (this.$vuetify.lang.current === "ar") {
         this.$vuetify.lang.current = "en";
         this.$vuetify.rtl = false;
+        Lang.set(this.$vuetify.lang.current);
         return;
       }
 
       this.$vuetify.lang.current = "ar";
       this.$vuetify.rtl = true;
+      Lang.set(this.$vuetify.lang.current);
     },
 
     toggleMiniBar(): void {

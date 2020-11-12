@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer
-    :mini-variant.sync="getNavStatus"
+    :mini-variant.sync="isMini"
     permanent
     color="dark"
     class="app-aside-nav"
@@ -24,12 +24,23 @@
   </v-navigation-drawer>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from "vue";
+import { $eventHub } from "..";
 import "./styles.scss";
 
 const AsideNav = Vue.extend({
   name: "AsideNav",
+
+  mounted() {
+    $eventHub.$on("toggleAppLeftSide", this.toggle);
+  },
+
+  data() {
+    return {
+      isMini: false,
+    };
+  },
   computed: {
     getNavItems() {
       return [
@@ -70,11 +81,11 @@ const AsideNav = Vue.extend({
         },
       ];
     },
-    getNavStatus: {
-      get(): boolean {
-        return this.$store.state?.Nav?.leftSide;
-      },
-      set(): void {},
+  },
+
+  methods: {
+    toggle() {
+      this.isMini = !this.isMini;
     },
   },
 });

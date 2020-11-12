@@ -21,9 +21,7 @@
     </v-row>
     <v-row>
       <v-col lg>
-        <v-btn color="primary" @click="toggleDialog">
-          Open Dialog
-        </v-btn>
+        <v-btn color="primary" @click="toggleDialog"> Open Dialog </v-btn>
       </v-col>
     </v-row>
 
@@ -55,12 +53,8 @@
       :handleOnClose="toggleDrawer"
       :width="'400px'"
     >
-      <template #footer>
-        Test Append Footer
-      </template>
-      <template #header>
-        prepend
-      </template>
+      <template #footer> Test Append Footer </template>
+      <template #header> prepend </template>
       <template #body>
         <v-list-item v-for="item in items" :key="item.text" link>
           <v-list-item-content>
@@ -115,7 +109,7 @@
 
 <script>
 import { Vue } from "vue-property-decorator";
-import { AppDrawer, AppDialog } from "@/components";
+import { AppDrawer, AppDialog, $eventHub } from "@/components";
 import { AbilityBuilder } from "@casl/ability";
 
 export default Vue.extend({

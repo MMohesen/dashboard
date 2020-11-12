@@ -1,14 +1,12 @@
 import "material-design-icons-iconfont/dist/material-design-icons.css"; // Ensure you are using css-loader
 import Vue from "vue";
 import Vuetify from "vuetify/lib";
-
 import colors from "@/config/colors";
-
-Vue.use(Vuetify);
 import DataJson from "@/data-source/app.json";
+import store from "@/store";
 
 export default new Vuetify({
-  rtl: false,
+  rtl: store.getters["App/isRtl"],
   iconfont: "md",
   icons: {
     iconfont: "mdi",
@@ -32,6 +30,7 @@ export default new Vuetify({
         ...DataJson?.translation.ar,
       },
     },
-    current: "en",
+    current: store.getters["App/lang"],
   },
 });
+Vue.use(Vuetify);

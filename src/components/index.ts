@@ -5,3 +5,4 @@ export { default as Charts } from "./charts/index.vue";
 export { default as AsideNavBar } from "./aside-nav/index.vue";
 export { default as AppDialog } from "./dialog/index.vue";
 export { default as AppLoader } from "./loader/index.vue";
+export { default as $eventHub } from "./eventHub";

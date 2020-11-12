@@ -1,7 +1,9 @@
+// import { Loader } from "@/services/helper";
 import Storage from "@/services/storage";
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Catalog from "../views/Catalog.vue";
+import { $eventHub } from "@/components";
 
 Vue.use(VueRouter);
 
@@ -64,6 +66,19 @@ router.beforeEach((to, from, next) => {
 
   // otherwise
   return next();
+});
+
+router.beforeResolve((to, from, next) => {
+  // show app loader
+  if (typeof to.matched[0]?.components.default === "function") {
+    $eventHub.$emit("showAppLoader");
+  }
+  next();
+});
+
+router.afterEach(() => {
+  // hide app loader
+  $eventHub.$emit("hideAppLoader", 700);
 });
 
 export default router;

@@ -42,7 +42,7 @@ import Vue from "vue";
 import "./styles.scss";
 import DataJson from "@/data-source/app.json";
 import TopBanner from "./top-banner.vue";
-import { mapActions } from "vuex";
+import $eventHub from "../eventHub";
 
 const NavBar = Vue.extend({
   name: "NavBar",
@@ -57,9 +57,9 @@ const NavBar = Vue.extend({
     };
   },
   methods: {
-    ...mapActions({
-      toggleLeftSide: "Nav/toggle",
-    }),
+    toggleLeftSide() {
+      $eventHub.$emit("toggleAppLeftSide");
+    },
   },
 });
 export default NavBar;
