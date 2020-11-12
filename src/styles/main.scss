@@ -8,6 +8,13 @@
   flex: 1;
 }
 .wrapper {
-  padding: 0.625rem;
+  padding: 1rem;
   width: 100%;
+}
+
+.v-list-item--dense .v-list-item__title,
+.v-list-item--dense .v-list-item__subtitle,
+.v-list--dense .v-list-item .v-list-item__title,
+.v-list--dense .v-list-item .v-list-item__subtitle {
+  font-size: 1.3rem;
 }

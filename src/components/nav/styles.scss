@@ -1,85 +1,85 @@
-@import "~vuetify/src/styles/styles.sass";
+// @import "~vuetify/src/styles/styles.sass";
 .app-nav-bar {
   position: relative;
 
   .banar-nav {
-    height: 44px !important;
+    height: 4.4rem !important;
     color: #fff;
     .v-toolbar__content {
-      height: 44px !important;
-      padding: 4px 36px;
+      height: 4.4rem !important;
+      padding: 0.4rem 3.6rem;
     }
     .trial-maessage {
-      margin: 0px;
+      margin: 0rem;
       color: #ffffffad;
-      font-size: 0.75rem;
+      font-size: 1.2rem;
     }
     .lang {
       color: #fff;
-      font-size: 0.75rem;
+      font-size: 1.2rem;
       font-weight: 700;
     }
     .vertical-spacer {
-      width: 0.0625rem;
+      width: 0.1rem;
       display: flex;
-      height: 1.25rem;
-      margin: 0rem 0.625rem;
+      height: 2rem;
+      margin: 0rem 1rem;
       background-color: #fff;
     }
   }
 
   .brand-box {
-    min-width: 15.75rem;
+    min-width: 25.2rem;
 
     .v-image {
-      max-width: 35px;
+      max-width: 3.5rem;
     }
 
     .app-name {
-      font-size: 1.15rem;
+      font-size: 1.84rem;
       font-weight: bold;
-      line-height: 2rem;
-      margin: 0rem 0.625rem;
+      line-height: 3.2rem;
+      margin: 0rem 1rem;
     }
   }
 
   .btn-action {
     &.v-icon {
-      margin: 0rem 0.3125rem;
+      margin: 0rem 0.5rem;
       cursor: pointer;
       color: #000 !important;
-      border: 0.0625rem solid transparent;
-      padding: 0.8rem 0.9rem;
+      border: 0.1rem solid transparent;
+      padding: 1.28rem 1.44rem;
       &:hover {
         opacity: 0.6;
-        border: 0.0625rem solid map-get($grey, lighten-3);
+        border: 0.1rem solid map-get($grey, lighten-3);
       }
     }
   }
 
   .page-title {
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: bold;
-    line-height: 1rem;
+    line-height: 1.6rem;
     text-transform: capitalize;
   }
 
   .btn-link {
-    height: 64px !important;
-    border-bottom: 1px solid transparent;
-    border-radius: 0px;
+    height: 6.4rem !important;
+    border-bottom: 0.1rem solid transparent;
+    border-radius: 0rem;
     background: transparent;
     .v-btn__content {
-      font-size: 0.9rem;
+      font-size: 1.44rem;
       font-weight: 700;
-      line-height: 0.9rem;
+      line-height: 1.44rem;
       text-transform: capitalize;
     }
 
     &:hover,
     &.active {
       background: transparent !important;
-      border-bottom: 1px solid #000 !important;
+      border-bottom: 0.1rem solid #000 !important;
     }
 
     &.v-btn:before {
@@ -92,12 +92,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    border: 0.0625rem solid map-get($grey, lighten-3);
-    border-radius: 0.0625rem;
-    padding: 0.4rem 0.625rem;
+    border: 0.1rem solid map-get($grey, lighten-3);
+    border-radius: 0.1rem;
+    padding: 0.64rem 1rem;
 
     .user-avatar {
-      font-size: 2.25rem;
+      font-size: 3.6rem;
     }
 
     .user-details {
@@ -107,8 +107,8 @@
       justify-content: center;
 
       .user-name {
-        font-size: 0.9375rem;
-        line-height: 1rem;
+        font-size: 1.5rem;
+        line-height: 1.6rem;
         text-transform: capitalize;
         font-weight: bold;
       }
@@ -116,8 +116,8 @@
       .user-type {
         font-weight: 400;
         text-transform: capitalize;
-        font-size: 0.625rem;
-        line-height: 1rem;
+        font-size: 1rem;
+        line-height: 1.6rem;
       }
     }
   }

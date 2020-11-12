@@ -5,6 +5,7 @@ class Users implements User {
   password = "";
   username = "";
   token = "";
+  business = "";
 }
 
 export default Users;

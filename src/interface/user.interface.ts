@@ -4,6 +4,7 @@ interface User {
   email: string;
   password: string;
   token: string;
+  business: string | null | undefined;
 }
 
 export default User;

@@ -17,7 +17,7 @@ Vue.use(abilitiesPlugin, ability);
 
 Vue.config.productionTip = true;
 Vue.mixin({
-  data: function() {
+  data: function () {
     return {
       get global() {
         return {

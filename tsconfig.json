@@ -23,7 +23,7 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedParameters": false,
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "removeComments": true,

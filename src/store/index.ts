@@ -3,6 +3,7 @@ import Vuex from "vuex";
 import Nav from "./modules/nav.module";
 import Table from "./modules/table.module";
 import Drawer from "./modules/drawer.module";
+import User from "./modules/user.module";
 
 Vue.use(Vuex);
 
@@ -16,6 +17,7 @@ const store = new Vuex.Store({
     Nav,
     Table,
     Drawer,
+    User,
   },
 });
 

@@ -34,8 +34,8 @@ const TopBanner = Vue.extend({
   components: { AppMinBar },
   data() {
     return {
-      translation: { ...DataJson?.translation.en },
       isVisible: false,
+      translation: { ...DataJson?.translation.en },
     };
   },
   methods: {
