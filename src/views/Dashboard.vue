@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper">
     <Charts />
+    <AppLoader />
   </div>
 </template>
 

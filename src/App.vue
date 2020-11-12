@@ -5,6 +5,7 @@
       <aside-nav-bar v-if="isLoggedIn" />
       <router-view />
     </v-main>
+    <AppLoader />
   </v-app>
 </template>
 
@@ -12,6 +13,7 @@
 import Vue from "vue";
 import { NavBar, AsideNavBar } from "@/components";
 import "./styles/index.scss";
+import { AppLoader } from "@/components";
 import { mapGetters } from "vuex";
 
 const App = Vue.extend({
@@ -19,6 +21,7 @@ const App = Vue.extend({
   components: {
     NavBar,
     AsideNavBar,
+    AppLoader,
   },
 
   created() {

@@ -52,6 +52,8 @@
 import User from "@/interface/user.interface";
 import Vue from "vue";
 import { mapActions, mapGetters } from "vuex";
+import Loader from "@/services/loading.ts";
+
 import "./styles.scss";
 
 const LoginPage = Vue.extend({
@@ -83,8 +85,10 @@ const LoginPage = Vue.extend({
         id: 1,
       };
 
+      Loader.show();
       await this.doLogin(userData);
-      this.$router.push("/dashboard");
+      await this.$router.push("/dashboard");
+      Loader.hide();
     },
     logout() {
       this.doLogOut();
