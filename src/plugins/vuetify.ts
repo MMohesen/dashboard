@@ -27,7 +27,6 @@ const options: VuetifyPreset = {
       lg: 1920,
     },
   },
-
   theme: {
     dark: false,
     default: "light",

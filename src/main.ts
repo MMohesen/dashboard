@@ -7,13 +7,17 @@ import vuetify from "./plugins/vuetify";
 import VueCookies from "vue-cookies";
 import { abilitiesPlugin } from "@casl/vue";
 import ability from "./services/ability";
-import { Can } from "@casl/vue";
 import Vuelidate from "vuelidate";
+import { Button } from "@/components";
+import { Can } from "@casl/vue";
 
 Vue.use(Vuelidate);
-Vue.component("Can", Can);
 Vue.use(VueCookies);
 Vue.use(abilitiesPlugin, ability);
+
+Vue.component("Can", Can);
+Vue.component("Button", Button);
+
 Vue.config.productionTip = true;
 
 Vue.mixin({

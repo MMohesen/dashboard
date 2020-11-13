@@ -1,7 +1,7 @@
 <template>
   <div class="app-nav-bar">
     <top-banner />
-    <v-app-bar flat color="white">
+    <v-app-bar flat color="light">
       <div class="d-flex align-center brand-box">
         <v-img :src="this.appLogo" :width="35" :alt="this.appName" />
         <span class="app-name">{{ this.appName }}</span>

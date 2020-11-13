@@ -42,9 +42,21 @@
       </v-col>
 
       <v-col md>
-        <v-btn depressed color="error" @click="setUserAbilityDelete">
-          Set User Ability To Delete a Book
-        </v-btn>
+        <Button
+          :color="'error'"
+          :onClick="setUserAbilityDelete"
+          :title="'Set User Ability To Delete a Book'"
+          :elevation="20"
+          :disabled="true"
+          :x-large="true"
+        >
+          <template #loading v-if="true">
+            <v-progress-circular indeterminate :color="'light'" />
+          </template>
+          <template #icon v-if="true">
+            <v-icon>apps</v-icon>
+          </template>
+        </Button>
       </v-col>
     </v-row>
 
@@ -111,7 +123,6 @@
 import { Vue } from "vue-property-decorator";
 import { AppDrawer, AppDialog, $eventHub } from "@/components";
 import { AbilityBuilder } from "@casl/ability";
-
 export default Vue.extend({
   components: { AppDrawer, AppDialog },
 
