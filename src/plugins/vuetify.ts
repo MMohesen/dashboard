@@ -4,24 +4,52 @@ import Vuetify from "vuetify/lib";
 import colors from "@/config/colors";
 import DataJson from "@/data-source/app.json";
 import store from "@/store";
+import { VuetifyPreset } from "vuetify/types/services/presets";
 
-export default new Vuetify({
+// add plugin to vue app
+Vue.use(Vuetify);
+
+// customize the vutify library
+const options: VuetifyPreset = {
   rtl: store.getters["App/isRtl"],
   iconfont: "md",
   icons: {
     iconfont: "mdi",
+    values: {},
   },
-  options: {
-    customProperties: true,
+  breakpoint: {
+    mobileBreakpoint: 16,
+    scrollBarWidth: 0,
+    thresholds: {
+      xs: 600,
+      sm: 960,
+      md: 1280,
+      lg: 1920,
+    },
   },
+
   theme: {
+    dark: false,
+    default: "light",
+    disable: false,
+    options: {
+      cspNonce: "dQw4w9WgXcQ",
+      customProperties: true,
+      variations: false,
+    },
     themes: {
       light: {
-        ...colors,
+        ...colors.light,
+      },
+      dark: {
+        ...colors.dark,
       },
     },
   },
+  customVariables: ["@/styles/variables.scss"],
+  treeShake: true,
   lang: {
+    t: undefined as any,
     locales: {
       en: {
         ...DataJson?.translation.en,
@@ -32,5 +60,5 @@ export default new Vuetify({
     },
     current: store.getters["App/lang"],
   },
-});
-Vue.use(Vuetify);
+};
+export default new Vuetify(options);

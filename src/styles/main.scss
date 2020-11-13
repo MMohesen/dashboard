@@ -1,4 +1,6 @@
 @import "~vuetify/src/styles/styles.sass";
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 .v-main {
   background: map-get($grey, lighten-4);
@@ -10,6 +12,7 @@
 .wrapper {
   padding: 1rem;
   width: 100%;
+  font-size: $font-size-root;
 }
 
 .v-list-item--dense .v-list-item__title,

@@ -1,48 +1,62 @@
-@import "~vuetify/src/styles/tools/_functions.sass";
-
-@import "~vuetify/src/components/VBtn/variables";
+@import "~vuetify/src/styles/styles.sass";
+@import "~vuetify/src/components/VBtn/_variables.scss";
 
 // root font size
 $font-size-root: 10px;
 $line-height-root: 14px;
 
-// button default type font-size
+$list-item-dense-title-line-height: 1.5rem;
+$color-pack: false;
+$body-font-family: "Roboto", "Almarai", serif;
+$border-radius-root: 6px;
+
+$btn-letter-spacing: 0;
+$btn-font-weight: 400;
+$list-item-title-font-size: 0.929rem;
+$list-item-dense-title-font-size: 0.929rem;
+$list-item-dense-title-font-weight: initial;
+
+// buttons fonts
 $btn-font-sizes: map-merge(
   $btn-font-sizes,
   (
     "x-small": 0.8rem,
     "small": 1rem,
-    "default": 1.2rem,
+    "default": 1.6rem,
     "large": 1.4rem,
     "x-large": 1.6rem,
   )
 );
 
-$list-item-dense-title-line-height: 1.5rem;
-// Globals
-// $body-font-family: "Work Sans", serif;
-// $border-radius-root: 6px;
-// Variables must come before the import
-// $btn-letter-spacing: 0;
-// $btn-font-weight: 400;
-// $list-item-title-font-size: 0.929rem;
-// $list-item-dense-title-font-size: 0.929rem;
-// $list-item-dense-title-font-weight: initial;
-// $fab-icon-sizes: (
-//   "small": 20,
+$fab-icon-sizes: (
+  "small": 20,
+);
+$btn-sizes: (
+  "default": 41,
+  "large": 54,
+);
+$headings: (
+  "h1": (
+    "size": 3.3125rem,
+    "line-height": 1.15em,
+  ),
+  "h2": (
+    "size": 2.25rem,
+    "line-height": 1.5em,
+  ),
+);
+// colors
+// $colors: map-merge(
+//   $colors,
+//   (
+//     "dark": "#263238",
+//     "success": "#00E096",
+//     "warning": "#FF9200",
+//     "white": "#ffffff",
+//     "light": "#f1f5f8",
+//     "primary": "#00C2F0",
+//     "secondary": "#b0bec5",
+//     "accent": "#FF9200",
+//     "error": "#b71c1c",
+//   )
 // );
-// $btn-sizes: (
-//   "default": 41,
-//   "large": 54,
-// );
-// $headings: (
-//   "h1": (
-//     "size": 3.3125rem,
-//     "line-height": 1.15em,
-//   ),
-//   "h2": (
-//     "size": 2.25rem,
-//     "line-height": 1.5em,
-//   ),
-// );
-@import "~vuetify/src/components/VStepper/_variables.scss";

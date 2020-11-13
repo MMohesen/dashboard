@@ -6,6 +6,7 @@ const Lang = {
     Storage.set("lang", lang, false);
     store.commit("App/setAppLang", lang);
   },
+
   prepare(): void {
     const lang = Storage.get("lang");
     if (lang) {
@@ -14,7 +15,13 @@ const Lang = {
   },
 };
 
+const AppLog = {
+  log({ ...reset }) {
+    console.log(reset);
+  },
+};
+
 /**
  * lang
  */
-export { Lang };
+export { Lang, AppLog };

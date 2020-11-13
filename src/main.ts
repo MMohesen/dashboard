@@ -14,8 +14,8 @@ Vue.use(Vuelidate);
 Vue.component("Can", Can);
 Vue.use(VueCookies);
 Vue.use(abilitiesPlugin, ability);
-
 Vue.config.productionTip = true;
+
 Vue.mixin({
   data: function () {
     return {

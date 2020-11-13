@@ -30,7 +30,7 @@
     </v-row>
     <v-row>
       <v-col md>
-        <v-btn depressed color="green" @click="setUserAbilityRead">
+        <v-btn depressed color="success" @click="setUserAbilityRead">
           Set User Ability to Read Book
         </v-btn>
       </v-col>
@@ -42,7 +42,7 @@
       </v-col>
 
       <v-col md>
-        <v-btn depressed color="red" @click="setUserAbilityDelete">
+        <v-btn depressed color="error" @click="setUserAbilityDelete">
           Set User Ability To Delete a Book
         </v-btn>
       </v-col>

@@ -1,5 +1,7 @@
 const Fonts = {
   type: "Roboto",
+  type_ar: "Almarai",
+
   weight: {
     bold: "bold",
     simeBold: "600",
