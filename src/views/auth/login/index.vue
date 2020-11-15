@@ -92,6 +92,9 @@ import "./styles.scss";
 const LoginPage = Vue.extend({
   name: "LoginPage",
   components: { AuthCard },
+  updated() {
+    console.log("***********login updated");
+  },
   data() {
     return {
       email: "",
@@ -142,6 +145,7 @@ const LoginPage = Vue.extend({
       await this.doLogin(userData);
       await this.$router.push("/dashboard");
     },
+
     switchLang() {
       Lang.switch(this);
     },

@@ -1,5 +1,6 @@
 import store from "@/store/index";
 import Storage from "./storage";
+
 import { APP_LANG } from "@/types";
 
 const Lang = {
@@ -14,6 +15,7 @@ const Lang = {
     if (_this) {
       _this.$vuetify.rtl = lang === APP_LANG.AR;
       _this.$vuetify.lang.current = lang;
+      _this.$forceUpdate();
     }
   },
 
