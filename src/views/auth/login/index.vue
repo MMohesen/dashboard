@@ -2,6 +2,11 @@
   <div class="auth-wrapper login-page">
     <v-card class="login-card rounded-0 v-sheet--outlined">
       <div class="form-box login-box">
+        <div class="alert-box">
+          <v-alert dismissible color="error">
+            Please Fill In The Required Fields
+          </v-alert>
+        </div>
         <div class="card-header">
           <div class="logo"></div>
         </div>
@@ -12,6 +17,7 @@
               :label="this.$vuetify.lang.t('$vuetify.business_domain')"
               :placeholder="this.$vuetify.lang.t('$vuetify.business_domain')"
               class="input-md rtl-text-align-start"
+              :error-messages="error.business_domain"
               outlined
             />
             <span class="dmain-title"> .posrocket.com </span>
@@ -21,6 +27,7 @@
               v-model="email"
               :label="this.$vuetify.lang.t('$vuetify.email_address')"
               :placeholder="this.$vuetify.lang.t('$vuetify.email_address')"
+              :error-messages="error.email"
               outlined
             />
           </div>
@@ -31,6 +38,7 @@
               :placeholder="this.$vuetify.lang.t('$vuetify.password')"
               :type="passwordVisible ? 'text' : 'password'"
               :outlined="true"
+              :error-messages="error.password"
               :append-icon="passwordVisible ? 'visibility' : 'visibility_off'"
               :appendOnClick="() => (passwordVisible = !passwordVisible)"
             />
@@ -99,12 +107,14 @@
 <script lang="ts">
 import User from "@/interface/user.interface";
 import { Lang } from "@/services/helper";
+import AuthCard from "@/components/auth/index.vue";
 import Vue from "vue";
 import { mapActions, mapGetters } from "vuex";
 import "./styles.scss";
 
 const LoginPage = Vue.extend({
   name: "LoginPage",
+  components: { AuthCard },
   data() {
     return {
       email: "",
@@ -112,6 +122,11 @@ const LoginPage = Vue.extend({
       businessDomain: "",
       remamberMe: false,
       passwordVisible: false,
+      error: {
+        email: "",
+        password: "",
+        business_domain: "",
+      },
       items: [
         {
           src: require("@/assets/images/login/slider-1.png"),

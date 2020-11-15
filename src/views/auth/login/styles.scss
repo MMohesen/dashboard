@@ -18,6 +18,8 @@
   }
   .login-box {
     width: 490px;
+    position: relative;
+
     &.form-box {
       padding: 105px 63px 44px;
     }
@@ -127,6 +129,26 @@
         color: var(--v-light-base);
         display: block;
       }
+    }
+  }
+
+  .alert-box {
+    position: absolute;
+    width: auto;
+    min-width: 200px;
+    top: 11px;
+    left: 11px;
+    right: 11px;
+    .v-alert__content {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.13125px;
+      color: var(--v-white-base);
+      text-align: center;
+    }
+    .v-btn {
+      color: #fff;
     }
   }
 

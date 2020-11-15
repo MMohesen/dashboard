@@ -17,7 +17,7 @@ const routes: Array<RouteConfig> = [
   {
     path: "/login",
     name: "Login",
-    component: () => import("../views/login/index.vue"),
+    component: () => import("@/views/auth/login/index.vue"),
     meta: { isAuth: false, title: "POSRocket | Login" },
   },
   {

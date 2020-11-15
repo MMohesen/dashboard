@@ -77,4 +77,11 @@ export default Input;
 .v-text-field__details {
   display: none;
 }
+.error--text {
+  .v-text-field__details {
+    display: block;
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+}
 </style>
