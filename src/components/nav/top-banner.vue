@@ -41,16 +41,7 @@ const TopBanner = Vue.extend({
   },
   methods: {
     switchAppLang(): void {
-      if (this.$vuetify.lang.current === "ar") {
-        this.$vuetify.lang.current = "en";
-        this.$vuetify.rtl = false;
-        Lang.set(this.$vuetify.lang.current);
-        return;
-      }
-
-      this.$vuetify.lang.current = "ar";
-      this.$vuetify.rtl = true;
-      Lang.set(this.$vuetify.lang.current);
+      Lang.switch(this);
     },
 
     toggleMiniBar(): void {

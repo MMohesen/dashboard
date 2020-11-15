@@ -1,6 +1,7 @@
 const Colors = {
   light: {
     dark: "#263238",
+    solitude: "#EDF1F7",
     default: "#263238",
     success: "#00E096",
     warning: "#FF9200",
@@ -11,6 +12,9 @@ const Colors = {
     accent: "#FF9200",
     error: `#FF4C4C`,
     info: "#2196F3",
+    catalina: "#2D415A",
+    gunmetal: "#2C383E",
+    bali_hai: "#8A959A",
   },
   dark: {
     white: "#0001",

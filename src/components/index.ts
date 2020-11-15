@@ -7,3 +7,7 @@ export { default as AppDialog } from "./dialog/index.vue";
 export { default as AppLoader } from "./loader/index.vue";
 export { default as Button } from "./button/index.vue";
 export { default as $eventHub } from "./eventHub";
+export { default as Input } from "./input/index.vue";
+export { default as Link } from "./link/index.vue";
+export { default as Footer } from "./footer/index.vue";
+export { default as Feedback } from "./feedback/index.vue";

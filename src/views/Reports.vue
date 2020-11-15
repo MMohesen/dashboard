@@ -116,6 +116,148 @@
     <Can do="delete" :on="'Book'" field="title">
       <span>Able to Delete book </span>
     </Can>
+    <div class="px-3">
+      <v-row>
+        <Button
+          :color="'primary'"
+          :title="'Primary'"
+          :elevation="1"
+          :x-small="true"
+          :loading="true"
+          class="mr-2"
+        />
+
+        <Button
+          :color="'error'"
+          :title="'Error'"
+          :elevation="1"
+          :small="true"
+          class="mr-2"
+        />
+
+        <Button
+          :color="'default'"
+          :title="'Default'"
+          :elevation="1"
+          :small="true"
+          class="mr-2"
+        />
+
+        <Button
+          :color="'dark'"
+          :title="'Dark'"
+          :elevation="1"
+          :small="true"
+          class="mr-2"
+        />
+
+        <Button
+          :color="'info'"
+          :title="'Info'"
+          :elevation="1"
+          :small="true"
+          class="mr-2"
+        />
+        <Button
+          :color="'accent'"
+          :title="'Accent'"
+          :elevation="1"
+          :small="true"
+          class="mr-2"
+        />
+
+        <Button
+          :color="'success'"
+          :title="'Success'"
+          :elevation="1"
+          :small="true"
+          class="mr-2"
+        />
+
+        <Button
+          :color="'warning'"
+          :title="'Warning'"
+          :elevation="1"
+          :small="true"
+          class="mr-2"
+        />
+      </v-row>
+
+      <v-row class="mt-3">
+        <Button
+          :color="'primary'"
+          :title="'Primary'"
+          :elevation="1"
+          :small="true"
+          class="mr-2"
+        />
+
+        <Button
+          :color="'error'"
+          :title="'Error'"
+          :elevation="1"
+          :small="true"
+          class="mr-2"
+        />
+
+        <Button
+          :color="'default'"
+          :title="'Default'"
+          :elevation="1"
+          :small="true"
+          :outlined="true"
+          class="mr-2"
+        />
+
+        <Button
+          :color="'dark'"
+          :title="'Dark'"
+          :elevation="1"
+          :small="true"
+          :outlined="true"
+          class="mr-2"
+        />
+
+        <Button
+          :color="'info'"
+          :title="'Info'"
+          :elevation="1"
+          :small="true"
+          :outlined="true"
+          class="mr-2"
+        />
+        <Button
+          :color="'accent'"
+          :title="'Accent'"
+          :elevation="1"
+          :small="true"
+          :outlined="true"
+          class="mr-2"
+        />
+
+        <Button
+          :color="'success'"
+          :title="'Success'"
+          :elevation="1"
+          :small="true"
+          :outlined="true"
+          class="mr-2"
+        />
+
+        <Button
+          :color="'warning'"
+          :title="'Warning'"
+          :elevation="1"
+          :small="true"
+          :outlined="true"
+          class="mr-2"
+        />
+      </v-row>
+
+      <v-row class="mt-3">
+        <Input label="Passwors" placeholder="Password" outlined />
+      </v-row>
+    </div>
   </div>
 </template>
 

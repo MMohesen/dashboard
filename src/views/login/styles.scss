@@ -8,6 +8,7 @@
     align-items: center;
     flex-direction: row;
   }
+
   .login-card {
     min-width: 100px;
     display: flex;
@@ -17,61 +18,118 @@
   }
   .login-box {
     width: 490px;
+    &.form-box {
+      padding: 105px 63px 44px;
+    }
+    .card-header {
+      margin-bottom: 36px;
+    }
+    .logo {
+      width: 228px;
+      height: 65px;
+      background: url("~@/assets/logos/logo.svg") center center no-repeat;
+      background-size: 100%;
+    }
+    .input-container {
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .input-md {
+        max-width: 240px;
+      }
+
+      .dmain-title {
+        font-size: 14px;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+        color: var(--v-gunmetal-base);
+      }
+    }
+    .remmber-box {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 10px;
+      .v-input__control {
+        flex-direction: revert;
+        flex-wrap: nowrap;
+      }
+      .check-box {
+        .v-icon {
+          color: #75757569;
+        }
+        .v-label {
+          font-size: 12px;
+          line-height: 14px;
+          font-weight: 400;
+          color: #2c383e;
+        }
+      }
+      .link {
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: -0.0428571px;
+        text-decoration-line: underline;
+        color: #40c4ff;
+      }
+    }
   }
-  .form-box {
-    padding: 60px;
-  }
-  .header-message {
-    color: #bbb9b9;
-    font-size: 13px;
-    margin: 30px 0px;
-    display: inline-block;
-    font-weight: bold;
-  }
-  .logo {
-    width: 228px;
-    height: 65px;
-    background: url("~@/assets/logos/posrocket-logo.png") center center
-      no-repeat;
-    background-size: 100%;
-  }
-  .input-container {
-    flex-direction: row;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .input-md {
-      max-width: 70%;
+
+  .slider-box {
+    .v-image,
+    .v-carousel-slider {
+      min-height: 100% !important;
+      height: 100% !important;
+      overflow: hidden;
+    }
+    .v-carousel__controls {
+      justify-content: flex-start;
+      padding: 0px 30px;
+    }
+    .v-btn:before {
+      background-color: none !important;
     }
 
-    .v-input {
-      font-size: 13px;
-      margin: 10px 0px;
+    .v-carousel__controls__item {
+      margin: 0px;
+      i {
+        font-size: 24px !important;
+      }
+      &.v-btn--active {
+        &:before,
+        &:after {
+          display: none;
+        }
+        i {
+          opacity: 1;
+        }
+      }
     }
 
-    .v-input__solt {
-      min-height: 49px;
-      margin: 10px 0px;
-    }
-    .v-text-field__details {
-      display: none;
-    }
-    .dmain-title {
-      font-size: 14px;
-    }
-    .v-text-field--full-width .v-input__prepend-outer,
-    .v-text-field--full-width .v-input__prepend-inner,
-    .v-text-field--full-width .v-input__append-inner,
-    .v-text-field--full-width .v-input__append-outer,
-    .v-text-field--enclosed .v-input__prepend-outer,
-    .v-text-field--enclosed .v-input__prepend-inner,
-    .v-text-field--enclosed .v-input__append-inner,
-    .v-text-field--enclosed .v-input__append-outer {
-      top: 0px;
-      bottom: 0px;
-      margin: auto;
+    .slide-description {
+      bottom: 50px;
+      position: absolute;
+      top: auto;
+      padding: 0px 30px;
+      label {
+        font-size: 16px;
+        line-height: 25px;
+        letter-spacing: -0.0571429px;
+        color: var(--v-light-base);
+        display: block;
+      }
+      span {
+        font-size: 12px;
+        line-height: 25px;
+        color: var(--v-light-base);
+        display: block;
+      }
     }
   }
+
   @media screen and (max-device-width: 450px) {
     .slider-box {
       display: none;

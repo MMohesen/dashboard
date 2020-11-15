@@ -1,4 +1,4 @@
-# dashboard
+# POSRocket
 
 ## Project setup
 ```

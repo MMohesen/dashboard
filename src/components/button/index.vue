@@ -1,11 +1,5 @@
 <template>
-  <v-btn
-    :elevation="elevation"
-    :color="color"
-    @click="onClick"
-    v-bind="resetProps"
-  >
-    <slot name="loading" />
+  <v-btn @click="onClick" v-bind="resetProps">
     <span class="btn-title">
       {{ title }}
     </span>
@@ -21,24 +15,12 @@ const Button = Vue.extend({
   props: {
     title: {
       required: true,
-      default: "Test Button",
+      default: "",
       type: String,
     },
     onClick: {
       default: () => {},
       type: Function,
-    },
-    color: {
-      default: "primary",
-      type: String,
-    },
-    elevation: {
-      default: 1,
-      type: Number,
-    },
-    isLoading: {
-      default: false,
-      type: Boolean,
     },
   },
   computed: {

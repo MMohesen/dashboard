@@ -1,10 +1,14 @@
 <template>
   <v-app>
-    <nav-bar v-if="isLoggedIn" />
+    <NavBar v-if="isLoggedIn" />
     <v-main class="app-main">
-      <aside-nav-bar v-if="isLoggedIn" />
-      <router-view />
+      <AsideNavBar v-if="isLoggedIn" />
+      <div class="page-container">
+        <router-view />
+        <Footer />
+      </div>
     </v-main>
+    <Feedback />
     <AppLoader />
   </v-app>
 </template>
@@ -37,13 +41,6 @@ const App = Vue.extend({
       isLoggedIn: "User/isLoggedIn",
       user: "User/user",
     }),
-  },
-
-  methods: {
-    async check() {
-      console.log("this.user => ", this.user);
-      console.log("this.isLoggedIn => ", this.isLoggedIn);
-    },
   },
 });
 

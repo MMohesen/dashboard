@@ -1,0 +1,7 @@
+.v-application--is-rtl {
+  .rtl-text-align-start {
+    input {
+      text-align: end !important;
+    }
+  }
+}

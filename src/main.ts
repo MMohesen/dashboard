@@ -8,7 +8,7 @@ import VueCookies from "vue-cookies";
 import { abilitiesPlugin } from "@casl/vue";
 import ability from "./services/ability";
 import Vuelidate from "vuelidate";
-import { Button } from "@/components";
+import { Button, Input, Link, Footer, Feedback } from "@/components";
 import { Can } from "@casl/vue";
 
 Vue.use(Vuelidate);
@@ -17,6 +17,10 @@ Vue.use(abilitiesPlugin, ability);
 
 Vue.component("Can", Can);
 Vue.component("Button", Button);
+Vue.component("Input", Input);
+Vue.component("Link", Link);
+Vue.component("Footer", Footer);
+Vue.component("Feedback", Feedback);
 
 Vue.config.productionTip = true;
 
@@ -32,7 +36,7 @@ Vue.mixin({
   },
 });
 
-new Vue({
+export default new Vue({
   router,
   store,
   vuetify,

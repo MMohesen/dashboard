@@ -14,6 +14,12 @@
       "categories": "Categories",
       "items": "Items",
       "combos": "Combos",
+      "email_address": "Email Address",
+      "password": "Password",
+      "business_domain": "Business Domain",
+      "remamber_me": "Remamber Me",
+      "reset_password": "Reset Password",
+      "login": "Login",
       "menu": {
         "catalog": "Catalog",
         "dashboard": "Dashboard",
@@ -22,6 +28,12 @@
         "customers": "Customers",
         "intgration": "Intgration",
         "settings": "Settings"
+      },
+      "footer": {
+        "about_us": "About Us",
+        "email_us": "Email Us",
+        "arabic": "اللغة العربية",
+        "copy_right_text": "Copyright © 2020 POSRocket. All rights Reserved"
       }
     },
     "ar": {
@@ -31,6 +43,12 @@
       "categories": "التصنيفات",
       "items": "العناصر",
       "combos": "المجموعات",
+      "email_address": "عنوان بريد الكتروني",
+      "password": "كلمه السر",
+      "business_domain": "مجال العمل",
+      "remamber_me": "تذكرنى",
+      "reset_password": "إعادة تعيين كلمة المرور",
+      "login": "تسجيل الدخول",
       "menu": {
         "catalog": "فهرس",
         "dashboard": "لوحة القيادة",
@@ -39,6 +57,12 @@
         "customers": "العملاء",
         "intgration": "دمج",
         "settings": "إعدادات"
+      },
+      "footer": {
+        "about_us": "عنا",
+        "email_us": "تواصل معنا",
+        "arabic": "اللغة العربية",
+        "copy_right_text": "حقوق النشر © 2020 POSRocket. كل الحقوق محفوظة"
       }
     }
   },

@@ -1,7 +1,5 @@
-const APP_LANG = {
-  EN: "en",
-  AR: "ar",
-};
+import { APP_LANG } from "@/types";
+
 const AppModule = {
   namespaced: true,
   state: () => ({
