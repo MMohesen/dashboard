@@ -69,4 +69,31 @@
       color: #fff;
     }
   }
+
+  .reset-success {
+    display: block;
+    background: url("~@/assets/images/reset-success.svg") center center
+      no-repeat;
+    background-size: 100%;
+    width: 73px;
+    height: 83px;
+    margin-top: 143px;
+  }
+  .reset-success-title {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.144px;
+    color: #2d415a;
+    margin-top: 16px;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  .reset-success-paragraph {
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.1225px;
+    color: #2d415a;
+  }
 }

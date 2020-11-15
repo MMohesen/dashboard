@@ -1,7 +1,7 @@
 <template>
   <AuthCard>
     <template #form>
-      <div class="form-box reset-box">
+      <div class="form-box reset-box" v-if="!isSuccess">
         <div class="alert-box">
           <v-alert dismissible color="error" v-show="!!validation_message">
             {{ validation_message }}
@@ -11,7 +11,7 @@
           <Link
             :title="$vuetify.lang.t('$vuetify.back_to_login')"
             class="back-link"
-            :to="'logo'"
+            :to="'login'"
           />
         </div>
         <div class="card-header">
@@ -51,6 +51,29 @@
           />
         </div>
       </div>
+
+      <div class="form-box reset-box" v-if="isSuccess">
+        <div class="alert-box">
+          <v-alert dismissible color="error" v-show="!!validation_message">
+            {{ validation_message }}
+          </v-alert>
+        </div>
+        <div class="top-head">
+          <Link
+            :title="$vuetify.lang.t('$vuetify.back_to_login')"
+            class="back-link"
+            :to="'login'"
+          />
+        </div>
+        <div class="reset-success" />
+        <label class="reset-success-title">
+          Password reset has been requested.
+        </label>
+        <p class="reset-success-paragraph">
+          If the provided email exists in our system, a new password will be
+          sent.
+        </p>
+      </div>
     </template>
   </AuthCard>
 </template>
@@ -65,6 +88,7 @@ const ResetPage = Vue.extend({
   components: { AuthCard },
   data() {
     return {
+      isSuccess: false,
       email: "",
       businessDomain: "",
       validation_message: "",
@@ -75,7 +99,9 @@ const ResetPage = Vue.extend({
     };
   },
   methods: {
-    reset() {},
+    reset() {
+      this.isSuccess = !0;
+    },
   },
 });
 export default ResetPage;
