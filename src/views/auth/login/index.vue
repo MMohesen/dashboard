@@ -73,7 +73,7 @@
             block
             text
             :onClick="switchLang"
-            :title="$vuetify.lang.t('$vuetify.footer.arabic')"
+            :title="$vuetify.lang.t('$vuetify.footer.switch_lang')"
           />
         </div>
       </div>

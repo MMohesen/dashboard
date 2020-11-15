@@ -33,7 +33,7 @@
       "footer": {
         "about_us": "About Us",
         "email_us": "Email Us",
-        "arabic": "اللغة العربية",
+        "switch_lang": "اللغة العربية",
         "copy_right_text": "Copyright © 2020 POSRocket. All rights Reserved"
       }
     },
@@ -63,7 +63,7 @@
       "footer": {
         "about_us": "عنا",
         "email_us": "تواصل معنا",
-        "arabic": "اللغة العربية",
+        "switch_lang": "English",
         "copy_right_text": "حقوق النشر © 2020 POSRocket. كل الحقوق محفوظة"
       }
     }

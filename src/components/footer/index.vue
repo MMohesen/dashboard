@@ -13,7 +13,7 @@
           class="link"
         />
         <Link
-          :title="this.$vuetify.lang.t('$vuetify.footer.arabic')"
+          :title="this.$vuetify.lang.t('$vuetify.footer.switch_lang')"
           :to="''"
           class="link"
         />

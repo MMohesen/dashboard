@@ -40,6 +40,11 @@
     text-decoration: none;
     text-indent: 36px;
     display: inline-block;
+    @at-root .v-application--is-rtl & {
+      &:before {
+        transform: rotate(-180deg);
+      }
+    }
     &:before {
       content: "";
       display: block;
