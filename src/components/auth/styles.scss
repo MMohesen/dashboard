@@ -1,4 +1,4 @@
-.app-auth-card {
+.auth-wrapper {
   &.auth-wrapper {
     width: 100%;
     height: 100%;
@@ -18,6 +18,8 @@
   }
 
   .slider-box {
+    width: 490px;
+    position: relative;
     .v-image,
     .v-carousel-slider {
       min-height: 100% !important;

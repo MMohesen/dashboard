@@ -1,10 +1,8 @@
 <template>
-  <div class="app-auth-card">
+  <div class="auth-wrapper">
     <v-card class="auth-card rounded-0 v-sheet--outlined">
-      <div class="form-box auth-box">
-        <slot name="form"></slot>
-      </div>
-      <div class="slider-box auth-box">
+      <slot name="form" />
+      <div class="slider-box">
         <v-carousel
           hide-delimiter-background
           delimiter-icon="mdi-minus"

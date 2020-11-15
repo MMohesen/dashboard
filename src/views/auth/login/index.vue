@@ -1,6 +1,6 @@
 <template>
-  <div class="auth-wrapper login-page">
-    <v-card class="login-card rounded-0 v-sheet--outlined">
+  <AuthCard>
+    <template #form>
       <div class="form-box login-box">
         <div class="alert-box">
           <v-alert dismissible color="error">
@@ -14,8 +14,8 @@
           <div class="input-container" dir="ltr">
             <Input
               v-model="businessDomain"
-              :label="this.$vuetify.lang.t('$vuetify.business_domain')"
-              :placeholder="this.$vuetify.lang.t('$vuetify.business_domain')"
+              :label="$vuetify.lang.t('$vuetify.business_domain')"
+              :placeholder="$vuetify.lang.t('$vuetify.business_domain')"
               class="input-md rtl-text-align-start"
               :error-messages="error.business_domain"
               outlined
@@ -25,8 +25,8 @@
           <div class="input-container">
             <Input
               v-model="email"
-              :label="this.$vuetify.lang.t('$vuetify.email_address')"
-              :placeholder="this.$vuetify.lang.t('$vuetify.email_address')"
+              :label="$vuetify.lang.t('$vuetify.email_address')"
+              :placeholder="$vuetify.lang.t('$vuetify.email_address')"
               :error-messages="error.email"
               outlined
             />
@@ -34,8 +34,8 @@
           <div class="input-container">
             <Input
               v-model="password"
-              :label="this.$vuetify.lang.t('$vuetify.password')"
-              :placeholder="this.$vuetify.lang.t('$vuetify.password')"
+              :label="$vuetify.lang.t('$vuetify.password')"
+              :placeholder="$vuetify.lang.t('$vuetify.password')"
               :type="passwordVisible ? 'text' : 'password'"
               :outlined="true"
               :error-messages="error.password"
@@ -48,11 +48,11 @@
         <div class="remmber-box">
           <v-checkbox
             v-model="remamberMe"
-            :label="this.$vuetify.lang.t('$vuetify.remamber_me')"
+            :label="$vuetify.lang.t('$vuetify.remamber_me')"
             class="check-box"
           ></v-checkbox>
           <Link
-            :title="this.$vuetify.lang.t('$vuetify.reset_password')"
+            :title="$vuetify.lang.t('$vuetify.reset_password')"
             class="link"
             :to="'lol'"
           />
@@ -64,7 +64,7 @@
             elevation="2"
             block
             :onClick="login"
-            :title="this.$vuetify.lang.t('$vuetify.login')"
+            :title="$vuetify.lang.t('$vuetify.login')"
           />
           <Button
             color="default"
@@ -73,35 +73,12 @@
             block
             text
             :onClick="switchLang"
-            :title="this.$vuetify.lang.t('$vuetify.footer.arabic')"
+            :title="$vuetify.lang.t('$vuetify.footer.arabic')"
           />
         </div>
       </div>
-      <div class="slider-box login-box">
-        <v-carousel
-          hide-delimiter-background
-          delimiter-icon="mdi-minus"
-          class="v-carousel-slider"
-          :show-arrows="false"
-        >
-          <v-carousel-item
-            v-for="(item, i) in items"
-            :key="i"
-            :src="item.src"
-            class="slider-images"
-            min-height="'100%'"
-          >
-            <div class="slide-description">
-              <label>
-                A point-of-sale that helps you sell and grow {{ i }}
-              </label>
-              <span>https://www.posrocket.com/</span>
-            </div>
-          </v-carousel-item>
-        </v-carousel>
-      </div>
-    </v-card>
-  </div>
+    </template>
+  </AuthCard>
 </template>
 
 <script lang="ts">
