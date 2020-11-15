@@ -1,0 +1,72 @@
+.reset-box {
+  width: 490px;
+  position: relative;
+
+  &.form-box {
+    padding: 44px 63px 44px;
+  }
+  .card-header {
+    margin-top: 104px;
+    margin-bottom: 30px;
+  }
+  .logo {
+    width: 228px;
+    height: 65px;
+    background: url("~@/assets/logos/logo.svg") center center no-repeat;
+    background-size: 100%;
+  }
+  .input-container {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .input-md {
+      max-width: 240px;
+    }
+
+    .dmain-title {
+      font-size: 14px;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.15px;
+      color: var(--v-gunmetal-base);
+    }
+  }
+  .back-link {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.06px;
+    color: #2d415a;
+    text-decoration: none;
+    text-indent: 36px;
+    display: inline-block;
+    &:before {
+      content: "";
+      display: block;
+      background: url("~@/assets/images/back-arrow.svg") center left no-repeat;
+      background-size: 16px;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+    }
+  }
+  .alert-box {
+    position: absolute;
+    width: auto;
+    min-width: 200px;
+    top: 11px;
+    left: 11px;
+    right: 11px;
+    .v-alert__content {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.13125px;
+      color: var(--v-white-base);
+      text-align: center;
+    }
+    .v-btn {
+      color: #fff;
+    }
+  }
+}

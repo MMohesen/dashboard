@@ -21,6 +21,12 @@ const routes: Array<RouteConfig> = [
     meta: { isAuth: false, title: "POSRocket | Login" },
   },
   {
+    path: "/reset-password",
+    name: "Reset Password",
+    component: () => import("@/views/auth/reset/index.vue"),
+    meta: { isAuth: false, title: "POSRocket | Reset password" },
+  },
+  {
     path: "/dashboard",
     name: "dashboard",
     component: () => import("../views/Dashboard.vue"),

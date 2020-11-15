@@ -19,6 +19,7 @@
       "business_domain": "Business Domain",
       "remamber_me": "Remamber Me",
       "reset_password": "Reset Password",
+      "back_to_login": "Back to login",
       "login": "Login",
       "menu": {
         "catalog": "Catalog",
@@ -49,6 +50,7 @@
       "remamber_me": "تذكرنى",
       "reset_password": "إعادة تعيين كلمة المرور",
       "login": "تسجيل الدخول",
+      "back_to_login": "العودة إلى تسجيل الدخول",
       "menu": {
         "catalog": "فهرس",
         "dashboard": "لوحة القيادة",

@@ -3,8 +3,8 @@
     <template #form>
       <div class="form-box login-box">
         <div class="alert-box">
-          <v-alert dismissible color="error">
-            Please Fill In The Required Fields
+          <v-alert dismissible color="error" v-show="!!validation_message">
+            {{ validation_message }}
           </v-alert>
         </div>
         <div class="card-header">
@@ -54,7 +54,7 @@
           <Link
             :title="$vuetify.lang.t('$vuetify.reset_password')"
             class="link"
-            :to="'lol'"
+            :to="'reset-password'"
           />
         </div>
         <div class="card-footer">
@@ -99,8 +99,9 @@ const LoginPage = Vue.extend({
       businessDomain: "",
       remamberMe: false,
       passwordVisible: false,
+      validation_message: "Please Fill In The Required Fields",
       error: {
-        email: "",
+        email: "invalide email address",
         password: "",
         business_domain: "",
       },
