@@ -1,5 +1,11 @@
 <template>
-  <v-text-field v-bind="resetProps" @click:append="this.appendOnClick" />
+  <v-text-field
+    v-bind="resetProps"
+    @input="this.input"
+    @keypress="this.keypress"
+    @blur="this.blur"
+    @click:append="this.appendOnClick"
+  />
 </template>
 
 <script lang="ts">
@@ -9,6 +15,21 @@ const Input = Vue.extend({
   name: "Input",
   props: {
     appendOnClick: {
+      default: () => {},
+      type: Function,
+    },
+    value: {
+      default: "",
+    },
+    keypress: {
+      default: () => {},
+      type: Function,
+    },
+    input: {
+      default: () => {},
+      type: Function,
+    },
+    blur: {
       default: () => {},
       type: Function,
     },

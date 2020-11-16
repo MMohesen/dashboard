@@ -21,6 +21,9 @@
       "reset_password": "Reset Password",
       "back_to_login": "Back to login",
       "login": "Login",
+      "invalid_email": "email is a required field",
+      "invalid_business_domain": "business domain is a required field",
+      "invalid_password": "password is a required field",
       "menu": {
         "catalog": "Catalog",
         "dashboard": "Dashboard",
@@ -51,6 +54,9 @@
       "reset_password": "إعادة تعيين كلمة المرور",
       "login": "تسجيل الدخول",
       "back_to_login": "العودة إلى تسجيل الدخول",
+      "invalid_email": "إن البريد الإلكترونى حقل مطلوب",
+      "invalid_business_domain": "مجال الأعمال هو حقل مطلوب",
+      "invalid_password": "كلمة المرور هي حقل مطلوب",
       "menu": {
         "catalog": "فهرس",
         "dashboard": "لوحة القيادة",

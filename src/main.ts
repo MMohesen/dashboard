@@ -7,11 +7,9 @@ import vuetify from "./plugins/vuetify";
 import VueCookies from "vue-cookies";
 import { abilitiesPlugin } from "@casl/vue";
 import ability from "./services/ability";
-import Vuelidate from "vuelidate";
 import { Button, Input, Link, Footer, Feedback } from "@/components";
 import { Can } from "@casl/vue";
 
-Vue.use(Vuelidate);
 Vue.use(VueCookies);
 Vue.use(abilitiesPlugin, ability);
 

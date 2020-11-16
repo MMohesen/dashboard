@@ -37,4 +37,9 @@ export default Button;
   display: inline-block;
   padding: 0px 15px;
 }
+.theme--light.v-btn.v-btn--disabled:not(.v-btn--flat):not(.v-btn--text):not(.v-btn-outlined) {
+  color: var(--v-white-base) !important;
+  background-color: var(--v-primary-base) !important;
+  opacity: 0.5;
+}
 </style>

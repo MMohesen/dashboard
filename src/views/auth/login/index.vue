@@ -1,7 +1,7 @@
 <template>
   <AuthCard>
     <template #form>
-      <div class="form-box login-box">
+      <form class="form-box login-box">
         <div class="alert-box">
           <v-alert dismissible color="error" v-show="!!validation_message">
             {{ validation_message }}
@@ -12,42 +12,55 @@
         </div>
         <div class="card-body">
           <div class="input-container" dir="ltr">
-            <Input
-              v-model="businessDomain"
+            <v-text-field
+              v-model="form.business_domain"
               :label="$vuetify.lang.t('$vuetify.business_domain')"
               :placeholder="$vuetify.lang.t('$vuetify.business_domain')"
               class="input-md rtl-text-align-start"
-              :error-messages="error.business_domain"
+              :error-messages="
+                error.business_domain &&
+                $vuetify.lang.t(`$vuetify.${error.business_domain}`)
+              "
               outlined
+              @blur="() => validate('business_domain')"
+              @keyup="() => validate('business_domain')"
             />
             <span class="dmain-title"> .posrocket.com </span>
           </div>
           <div class="input-container">
-            <Input
-              v-model="email"
+            <v-text-field
               :label="$vuetify.lang.t('$vuetify.email_address')"
               :placeholder="$vuetify.lang.t('$vuetify.email_address')"
-              :error-messages="error.email"
+              :error-messages="
+                error.email && $vuetify.lang.t(`$vuetify.${error.email}`)
+              "
+              v-model="form.email"
               outlined
+              @blur="() => validate('email')"
+              @keyup="() => validate('email')"
             />
           </div>
           <div class="input-container">
-            <Input
-              v-model="password"
+            <v-text-field
               :label="$vuetify.lang.t('$vuetify.password')"
               :placeholder="$vuetify.lang.t('$vuetify.password')"
               :type="passwordVisible ? 'text' : 'password'"
+              v-model="form.password"
               :outlined="true"
-              :error-messages="error.password"
+              :error-messages="
+                error.password && $vuetify.lang.t(`$vuetify.${error.password}`)
+              "
               :append-icon="passwordVisible ? 'visibility' : 'visibility_off'"
               :appendOnClick="() => (passwordVisible = !passwordVisible)"
+              @blur="() => validate('password')"
+              @keyup="() => validate('password')"
             />
           </div>
         </div>
 
         <div class="remmber-box">
           <v-checkbox
-            v-model="remamberMe"
+            v-model="form.remamberMe"
             :label="$vuetify.lang.t('$vuetify.remamber_me')"
             class="check-box"
           ></v-checkbox>
@@ -61,9 +74,10 @@
           <Button
             color="primary"
             class="mb-5"
-            elevation="2"
+            elevation="0"
             block
             :onClick="login"
+            :disabled="!is_submit_enabled"
             :title="$vuetify.lang.t('$vuetify.login')"
           />
           <Button
@@ -76,7 +90,7 @@
             :title="$vuetify.lang.t('$vuetify.footer.switch_lang')"
           />
         </div>
-      </div>
+      </form>
     </template>
   </AuthCard>
 </template>
@@ -87,41 +101,34 @@ import { Lang } from "@/services/helper";
 import AuthCard from "@/components/auth/index.vue";
 import Vue from "vue";
 import { mapActions, mapGetters } from "vuex";
+import * as yup from "yup";
 import "./styles.scss";
+
+const loginFormSchema = yup.object().shape({
+  email: yup.string().required("invalid_email").email("invalid_email"),
+  password: yup.string().required("invalid_password"),
+  business_domain: yup.string().required("invalid_business_domain"),
+});
 
 const LoginPage = Vue.extend({
   name: "LoginPage",
   components: { AuthCard },
-  updated() {
-    console.log("***********login updated");
-  },
   data() {
     return {
-      email: "",
-      password: "",
-      businessDomain: "",
-      remamberMe: false,
+      form: {
+        email: "",
+        password: "",
+        business_domain: "",
+        remamberMe: false,
+      },
+      is_submit_enabled: true,
       passwordVisible: false,
       validation_message: "Please Fill In The Required Fields",
       error: {
-        email: "invalide email address",
+        email: "",
         password: "",
         business_domain: "",
       },
-      items: [
-        {
-          src: require("@/assets/images/login/slider-1.png"),
-        },
-        {
-          src: require("@/assets/images/login/slider-1.png"),
-        },
-        {
-          src: require("@/assets/images/login/slider-1.png"),
-        },
-        {
-          src: require("@/assets/images/login/slider-1.png"),
-        },
-      ],
     };
   },
   methods: {
@@ -132,13 +139,28 @@ const LoginPage = Vue.extend({
     ...mapGetters({
       isLoggedIn: "User/isLoggedIn",
     }),
+
+    validate(field: any) {
+      return loginFormSchema
+        .validateAt(field, this.form)
+        .then(() => {
+          this.error[field] = "";
+          this.is_submit_enabled = true;
+          console.log("this.is_submit_enabled", this.is_submit_enabled);
+        })
+        .catch((err: any) => {
+          this.is_submit_enabled = false;
+          this.error[field] = err.message;
+          console.log("this.is_submit_enabled", this.is_submit_enabled);
+        });
+    },
     async login() {
       const userData: User = {
-        email: this.email,
-        password: this.password,
-        business: this.businessDomain,
+        email: this.form.email,
+        password: this.form.password,
+        business: this.form.business_domain,
         token: "Token 123456",
-        username: "Monty",
+        username: this.form.email,
         id: 1,
       };
 
