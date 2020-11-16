@@ -25,6 +25,8 @@
       "invalid_sub_domain": "business domain is a required field",
       "invalid_password": "password is a required field",
       "fill_all_required_fields_message": "Please Fill In The Required Fields",
+      "success_reset_title": "Password reset has been requested.",
+      "success_reset_message": "If the provided email exists in our system, a new password will be sent.",
       "menu": {
         "catalog": "Catalog",
         "dashboard": "Dashboard",
@@ -59,6 +61,8 @@
       "invalid_sub_domain": "مجال الأعمال هو حقل مطلوب",
       "invalid_password": "كلمة المرور هي حقل مطلوب",
       "fill_all_required_fields_message": "يرجى تعبئة الحقول المطلوبة",
+      "success_reset_title": "تم طلب إعادة تعيين كلمة المرور.",
+      "success_reset_message": "إذا كان البريد الإلكتروني المقدم موجودًا في نظامنا ، فسيتم إرسال كلمة مرور جديدة.",
       "menu": {
         "catalog": "فهرس",
         "dashboard": "لوحة القيادة",

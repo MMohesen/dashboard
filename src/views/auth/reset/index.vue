@@ -75,11 +75,10 @@
         </div>
         <div class="reset-success" />
         <label class="reset-success-title">
-          Password reset has been requested.
+          {{ $vuetify.lang.t("$vuetify.success_reset_title") }}
         </label>
         <p class="reset-success-paragraph">
-          If the provided email exists in our system, a new password will be
-          sent.
+          {{ $vuetify.lang.t("$vuetify.success_reset_message") }}
         </p>
       </div>
     </template>
