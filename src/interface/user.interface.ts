@@ -1,10 +1,20 @@
-interface User {
-  id: number;
-  username: string;
+interface UserInterface {
+  id?: string;
   email: string;
-  password: string;
+  password?: string;
+  sub_domain?: string;
+  first_name?: string;
+  last_name?: string;
+  permissions?: [];
+}
+interface SessionInterface {
   token: string;
-  business: string | null | undefined;
+  user: UserInterface;
+}
+interface UserSession {
+  getUser(): Object;
+  getPermissions(): any[];
+  getToken(): String;
 }
 
-export default User;
+export { UserInterface, SessionInterface, UserSession };

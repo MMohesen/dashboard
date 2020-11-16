@@ -1,6 +1,6 @@
 import { APP_LANG } from "@/types";
 
-const AppModule = {
+const AppStore = {
   namespaced: true,
   state: () => ({
     isLoading: false,
@@ -21,4 +21,4 @@ const AppModule = {
   },
 };
 
-export default AppModule;
+export default AppStore;

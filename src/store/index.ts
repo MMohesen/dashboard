@@ -1,8 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import Table from "./modules/table.module";
-import User from "./modules/user.module";
-import App from "./modules/app.module";
+import Table from "./modules/table.store";
+import User from "./modules/user.store";
+import App from "./modules/app.store";
 
 Vue.use(Vuex);
 

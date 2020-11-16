@@ -106,6 +106,7 @@ router.beforeEach((to, from, next) => {
       .forEach((tag: any) => document.head.appendChild(tag));
 
   const user = Storage.get("dashboard_user");
+
   const { isAuth } = to?.meta;
 
   // user logged in and route login

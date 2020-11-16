@@ -19,22 +19,29 @@
         </div>
         <div class="card-body">
           <div class="input-container" dir="ltr">
-            <Input
-              v-model="businessDomain"
-              :label="$vuetify.lang.t('$vuetify.business_domain')"
-              :placeholder="$vuetify.lang.t('$vuetify.business_domain')"
+            <v-text-field
+              v-model="form.sub_domain"
+              :label="$vuetify.lang.t('$vuetify.sub_domain')"
+              :placeholder="$vuetify.lang.t('$vuetify.sub_domain')"
               class="input-md rtl-text-align-start"
-              :error-messages="error.business_domain"
+              :error-messages="
+                error.sub_domain &&
+                $vuetify.lang.t(`$vuetify.${error.sub_domain}`)
+              "
+              @keyup="() => validate('sub_domain')"
               outlined
             />
             <span class="dmain-title"> .posrocket.com </span>
           </div>
           <div class="input-container">
-            <Input
-              v-model="email"
+            <v-text-field
+              v-model="form.email"
               :label="$vuetify.lang.t('$vuetify.email_address')"
               :placeholder="$vuetify.lang.t('$vuetify.email_address')"
-              :error-messages="error.email"
+              :error-messages="
+                error.email && $vuetify.lang.t(`$vuetify.${error.email}`)
+              "
+              @keyup="() => validate('email')"
               outlined
             />
           </div>
@@ -46,7 +53,8 @@
             class="mb-5"
             elevation="0"
             block
-            :onClick="reset"
+            :onClick="doReset"
+            :disabled="!is_submit_enabled"
             :title="$vuetify.lang.t('$vuetify.reset_password')"
           />
         </div>
@@ -80,8 +88,15 @@
 
 <script lang="ts">
 import AuthCard from "@/components/auth/index.vue";
+import { mapActions, mapGetters } from "vuex";
+import * as yup from "yup";
 import Vue from "vue";
 import "./styles.scss";
+
+const loginFormSchema = yup.object().shape({
+  email: yup.string().required("invalid_email").email("invalid_email"),
+  sub_domain: yup.string().required("invalid_sub_domain"),
+});
 
 const ResetPage = Vue.extend({
   name: "ResetPage",
@@ -89,18 +104,61 @@ const ResetPage = Vue.extend({
   data() {
     return {
       isSuccess: false,
-      email: "",
-      businessDomain: "",
+      form: {
+        email: "o.shagooj@gmail.com",
+        sub_domain: "burger",
+      },
       validation_message: "",
+      is_submit_enabled: true,
       error: {
         email: "",
-        business_domain: "",
+        sub_domain: "",
       },
     };
   },
   methods: {
-    reset() {
-      this.isSuccess = !0;
+    ...mapActions({
+      doResetPassword: "User/doResetPassword",
+    }),
+
+    ...mapGetters({
+      success: "User/success",
+      responseError: "User/error",
+    }),
+
+    validate(field: any) {
+      return loginFormSchema
+        .validateAt(field, this.form)
+        .then(() => {
+          this.error[field] = "";
+          this.is_submit_enabled = true;
+        })
+        .catch(({ message }) => {
+          this.is_submit_enabled = false;
+          this.error[field] = message;
+        });
+    },
+
+    async doReset() {
+      loginFormSchema
+        .validate(this.form)
+        .then(async () => {
+          await this.doResetPassword(this.form);
+          this.validation_message = "";
+        })
+        .catch((err: any) => {
+          this.is_submit_enabled = false;
+          this.validation_message = this.$vuetify.lang.t(
+            "$vuetify.fill_all_required_fields_message"
+          );
+        })
+        .finally(() => {
+          this.isSuccess = this.success();
+          if (!this.isSuccess) {
+            const { message } = this.responseError();
+            this.validation_message = message;
+          }
+        });
     },
   },
 });

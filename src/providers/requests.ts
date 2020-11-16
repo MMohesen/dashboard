@@ -1,15 +1,15 @@
 import axios from "axios";
 import ENDPOINTS from "./end-points";
-import Vue from "vue";
+import Storage from "@/services/storage";
 
 axios.defaults.baseURL = ENDPOINTS.BASE_URL;
 
 axios.interceptors.request.use(
   (config) => {
-    if (Vue.$cookies.get("DASHBOARD_COOKIES")) {
-      let { token } = Vue.$cookies.get("DASHBOARD_COOKIES");
-      config.headers.common["Authorization"] = `Bearer ${token}`;
-      config.headers.common["Accept"] = "application/json";
+    config.headers.common["Accept"] = "application/json";
+    const token = Storage.get("dashboard_token");
+    if (!!token) {
+      config.headers.common["X-POS-User-Agent"] = `Bearer ${token}`;
     }
     return config;
   },
@@ -19,8 +19,8 @@ axios.interceptors.request.use(
 );
 
 axios.interceptors.response.use(
-  (response) => {
-    return response;
+  ({ data }) => {
+    return data;
   },
   (error) => {
     const { response } = error;

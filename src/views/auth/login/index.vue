@@ -13,17 +13,17 @@
         <div class="card-body">
           <div class="input-container" dir="ltr">
             <v-text-field
-              v-model="form.business_domain"
-              :label="$vuetify.lang.t('$vuetify.business_domain')"
-              :placeholder="$vuetify.lang.t('$vuetify.business_domain')"
+              v-model="form.sub_domain"
+              :label="$vuetify.lang.t('$vuetify.sub_domain')"
+              :placeholder="$vuetify.lang.t('$vuetify.sub_domain')"
               class="input-md rtl-text-align-start"
               :error-messages="
-                error.business_domain &&
-                $vuetify.lang.t(`$vuetify.${error.business_domain}`)
+                error.sub_domain &&
+                $vuetify.lang.t(`$vuetify.${error.sub_domain}`)
               "
+              autocomplete="off"
               outlined
-              @blur="() => validate('business_domain')"
-              @keyup="() => validate('business_domain')"
+              @keyup="() => validate('sub_domain')"
             />
             <span class="dmain-title"> .posrocket.com </span>
           </div>
@@ -34,9 +34,9 @@
               :error-messages="
                 error.email && $vuetify.lang.t(`$vuetify.${error.email}`)
               "
+              autocomplete="off"
               v-model="form.email"
               outlined
-              @blur="() => validate('email')"
               @keyup="() => validate('email')"
             />
           </div>
@@ -50,9 +50,9 @@
               :error-messages="
                 error.password && $vuetify.lang.t(`$vuetify.${error.password}`)
               "
+              autocomplete="off"
               :append-icon="passwordVisible ? 'visibility' : 'visibility_off'"
-              :appendOnClick="() => (passwordVisible = !passwordVisible)"
-              @blur="() => validate('password')"
+              @click:append="() => (passwordVisible = !passwordVisible)"
               @keyup="() => validate('password')"
             />
           </div>
@@ -96,39 +96,41 @@
 </template>
 
 <script lang="ts">
-import User from "@/interface/user.interface";
 import { Lang } from "@/services/helper";
 import AuthCard from "@/components/auth/index.vue";
-import Vue from "vue";
+import { UserInterface } from "@/interface/user.interface";
 import { mapActions, mapGetters } from "vuex";
 import * as yup from "yup";
+import Vue from "vue";
 import "./styles.scss";
 
 const loginFormSchema = yup.object().shape({
   email: yup.string().required("invalid_email").email("invalid_email"),
   password: yup.string().required("invalid_password"),
-  business_domain: yup.string().required("invalid_business_domain"),
+  sub_domain: yup.string().required("invalid_sub_domain"),
 });
 
 const LoginPage = Vue.extend({
   name: "LoginPage",
   components: { AuthCard },
+  mounted() {},
   data() {
     return {
       form: {
-        email: "",
-        password: "",
-        business_domain: "",
+        sub_domain: "burger",
+        email: "burger@posrocket.com",
+        password: "pos123456",
         remamberMe: false,
       },
       is_submit_enabled: true,
       passwordVisible: false,
-      validation_message: "Please Fill In The Required Fields",
+      validation_message: "",
       error: {
         email: "",
         password: "",
-        business_domain: "",
+        sub_domain: "",
       },
+      loginFormSchema: {},
     };
   },
   methods: {
@@ -136,8 +138,10 @@ const LoginPage = Vue.extend({
       doLogin: "User/doLogin",
       doLogOut: "User/doLogOut",
     }),
+
     ...mapGetters({
       isLoggedIn: "User/isLoggedIn",
+      responseError: "User/error",
     }),
 
     validate(field: any) {
@@ -146,31 +150,58 @@ const LoginPage = Vue.extend({
         .then(() => {
           this.error[field] = "";
           this.is_submit_enabled = true;
-          console.log("this.is_submit_enabled", this.is_submit_enabled);
         })
         .catch((err: any) => {
           this.is_submit_enabled = false;
           this.error[field] = err.message;
-          console.log("this.is_submit_enabled", this.is_submit_enabled);
         });
     },
-    async login() {
-      const userData: User = {
-        email: this.form.email,
-        password: this.form.password,
-        business: this.form.business_domain,
-        token: "Token 123456",
-        username: this.form.email,
-        id: 1,
-      };
 
-      await this.doLogin(userData);
-      await this.$router.push("/dashboard");
+    async login() {
+      return loginFormSchema
+        .validate(this.form)
+        .then(async () => {
+          const userData: UserInterface = {
+            email: this.form.email,
+            password: this.form.password,
+            sub_domain: this.form.sub_domain,
+          };
+
+          await this.doLogin(userData);
+          if (this.isLoggedIn()) {
+            this.$router.push("/");
+            return;
+          }
+
+          const { message, details } = this.responseError();
+
+          this.validation_message =
+            message ||
+            this.$vuetify.lang.t("$vuetify.fill_all_required_fields_message");
+
+          if (details)
+            this.error = {
+              ...this.error,
+              ...details,
+            };
+
+          this.form = {
+            ...this.form,
+            password: "",
+          };
+          this.is_submit_enabled = false;
+        })
+        .catch((err: any) => {
+          this.validation_message = this.$vuetify.lang.t(
+            "$vuetify.fill_all_required_fields_message"
+          );
+        });
     },
 
     switchLang() {
       Lang.switch(this);
     },
+
     logout() {
       this.doLogOut();
     },
