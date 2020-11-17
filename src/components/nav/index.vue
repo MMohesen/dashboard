@@ -1,25 +1,19 @@
 <template>
   <div class="app-nav-bar">
     <top-banner />
-    <v-app-bar flat color="light">
+    <v-app-bar flat color="white" height="52">
       <div class="d-flex align-center brand-box">
-        <v-img :src="this.appLogo" :width="35" :alt="this.appName" />
-        <span class="app-name">{{ this.appName }}</span>
+        <v-img :src="this.appLogo" width="32" :alt="this.appName" />
       </div>
       <div class="links">
-        <v-icon class="btn-action" @click="toggleLeftSide">menu</v-icon>
-        <label class="page-title">{{
-          this.$vuetify.lang.t("$vuetify.catalog")
-        }}</label>
-        <v-btn text href="/fooRoute" class="btn-link"
-          >{{ this.$vuetify.lang.t("$vuetify.catalog") }}
-        </v-btn>
-        <v-btn text href="/fooRoute" class="btn-link">
-          {{ this.$vuetify.lang.t("$vuetify.items") }}
-        </v-btn>
-        <v-btn text href="/fooRoute" class="btn-link">
-          {{ this.$vuetify.lang.t("$vuetify.combos") }}
-        </v-btn>
+        <div class="burger-btn">
+          <v-img
+            @click="toggleLeftSide"
+            :src="require('@/assets/navbar/burger.svg')"
+            contain
+            :width="18"
+          />
+        </div>
       </div>
       <v-spacer />
 

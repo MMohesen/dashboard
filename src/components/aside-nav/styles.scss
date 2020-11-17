@@ -49,6 +49,7 @@
     margin-bottom: 1.6rem;
   }
 
+  // if it not mini
   &:not(.v-navigation-drawer--mini-variant) {
     .footer-logo {
       background: url("~@/assets/navbar/logo-footer.svg") center center
@@ -65,6 +66,7 @@
     }
   }
 
+  // if it mini
   &.v-navigation-drawer--mini-variant {
     .footer-logo {
       background: url("~@/assets/navbar/logo-footer-collapse.svg") center center
@@ -80,16 +82,14 @@
       flex-direction: column;
       height: 4.5rem;
       .v-list-item__icon {
-        margin: 0rem;
+        margin: 0;
         align-self: center;
         display: flex;
       }
-      .v-list-item__content {
-        display: none;
-      }
+
       &:after,
       &:after {
-        display: none;
+        min-height: auto;
       }
     }
   }
