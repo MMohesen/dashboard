@@ -19,17 +19,24 @@ $fab-icon-sizes: (
 );
 
 $btn-font-sizes: (
-  "x-small": 0.8rem,
-  "small": 1rem,
-  "default": 1.6rem,
-  "large": 1.4rem,
-  "x-large": 1.6rem,
+  "x-small": 1rem,
+  "small": 1.2rem,
+  "default": 1.4rem,
+  "large": 1.6rem,
+  "x-large": 1.8rem,
 );
 
+// $btn-letter-spacing: 0.001rem;
+
 $btn-sizes: (
-  "default": 41,
-  "large": 54,
+  "x-small": 24,
+  "small": 32,
+  "default": 40,
+  "large": 48,
+  "x-large": 56,
 );
+
+$btn-transition-duration: 0.2rem;
 
 $headings: (
   "h1": (

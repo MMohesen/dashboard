@@ -43,11 +43,23 @@ export default Button;
   opacity: 0.5;
 }
 
-v-btn.v-size--default {
-  font-size: 1.4rem;
-}
+// v-btn.v-size--default {
+//   font-size: 1.4rem;
+// }
 
-.v-btn:not(.v-btn--round).v-size--default {
-  height: 50px !important;
-}
+// .v-btn.v-size--default {
+//   height: 48px !important;
+// }
+
+// .v-btn.v-size--large {
+//   height: 56px !important;
+// }
+
+// .v-btn.v-size--small {
+//   height: 40px !important;
+// }
+
+// .v-btn.v-size--x-small {
+//   height: 32px !important;
+// }
 </style>

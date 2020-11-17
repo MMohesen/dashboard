@@ -79,6 +79,7 @@
             class="mb-5"
             elevation="0"
             block
+            large
             :onClick="login"
             :disabled="!is_submit_enabled"
             :title="$vuetify.lang.t('$vuetify.login')"
@@ -88,6 +89,7 @@
             elevation="0"
             class="mt-2"
             block
+            large
             text
             :onClick="switchLang"
             :title="$vuetify.lang.t('$vuetify.footer.switch_lang')"
