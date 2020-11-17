@@ -5,6 +5,7 @@ import colors from "@/config/colors";
 import DataJson from "@/data-source/app.json";
 import store from "@/store";
 import { VuetifyPreset } from "vuetify/types/services/presets";
+import "@mdi/font/css/materialdesignicons.css"; // Ensure you are using css-loader
 
 // add plugin to vue app
 Vue.use(Vuetify);
@@ -12,14 +13,14 @@ Vue.use(Vuetify);
 // customize the vutify library
 const options: VuetifyPreset = {
   rtl: store.getters["App/isRtl"],
-  iconfont: "md",
+  iconfont: "",
   icons: {
     iconfont: "mdi",
     values: {},
   },
   breakpoint: {
     mobileBreakpoint: 16,
-    scrollBarWidth: 0,
+    scrollBarWidth: 24,
     thresholds: {
       xs: 600,
       sm: 960,

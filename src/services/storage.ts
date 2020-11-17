@@ -12,11 +12,13 @@ const Storage = {
       return;
     }
 
-    localStorage.setItem(key, value);
+    localStorage.setItem(key, JSON.stringify(value));
   },
 
   get(key: string): any | null {
-    return Vue.$cookies.get(key) || localStorage[key] || null;
+    let value = Vue.$cookies.get(key) || null;
+    if (!!localStorage[key]) value = JSON.parse(localStorage[key]);
+    return value;
   },
 
   check(key: string): boolean {

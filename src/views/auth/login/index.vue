@@ -25,7 +25,7 @@
               outlined
               @keyup="() => validate('sub_domain')"
             />
-            <span class="dmain-title"> .posrocket.com </span>
+            <span class="domain-title"> .posrocket.com </span>
           </div>
           <div class="input-container">
             <v-text-field
@@ -44,15 +44,17 @@
             <v-text-field
               :label="$vuetify.lang.t('$vuetify.password')"
               :placeholder="$vuetify.lang.t('$vuetify.password')"
-              :type="passwordVisible ? 'text' : 'password'"
+              :type="is_password_visible ? 'text' : 'password'"
               v-model="form.password"
               :outlined="true"
               :error-messages="
                 error.password && $vuetify.lang.t(`$vuetify.${error.password}`)
               "
               autocomplete="off"
-              :append-icon="passwordVisible ? 'visibility' : 'visibility_off'"
-              @click:append="() => (passwordVisible = !passwordVisible)"
+              :append-icon="
+                is_password_visible ? 'visibility' : 'visibility_off'
+              "
+              @click:append="() => (is_password_visible = !is_password_visible)"
               @keyup="() => validate('password')"
             />
           </div>
@@ -60,10 +62,11 @@
 
         <div class="remmber-box">
           <v-checkbox
-            v-model="form.remamberMe"
+            v-model="form.is_remamber"
+            color="primary"
             :label="$vuetify.lang.t('$vuetify.remamber_me')"
             class="check-box"
-          ></v-checkbox>
+          />
           <Link
             :title="$vuetify.lang.t('$vuetify.reset_password')"
             class="link"
@@ -100,6 +103,7 @@ import { Lang } from "@/services/helper";
 import AuthCard from "@/components/auth/index.vue";
 import { UserInterface } from "@/interface/user.interface";
 import { mapActions, mapGetters } from "vuex";
+import Storage from "@/services/storage";
 import * as yup from "yup";
 import Vue from "vue";
 import "./styles.scss";
@@ -113,24 +117,33 @@ const loginFormSchema = yup.object().shape({
 const LoginPage = Vue.extend({
   name: "LoginPage",
   components: { AuthCard },
-  mounted() {},
+  mounted() {
+    setTimeout(() => {
+      const saved_login_credentials = Storage.get("login_credentials");
+      if (!!saved_login_credentials) {
+        this.form = {
+          ...this.form,
+          ...saved_login_credentials,
+        };
+      }
+    }, 500);
+  },
   data() {
     return {
       form: {
-        sub_domain: "burger",
-        email: "burger@posrocket.com",
-        password: "pos123456",
-        remamberMe: false,
+        sub_domain: "",
+        email: "",
+        password: "",
+        is_remamber: false,
       },
       is_submit_enabled: true,
-      passwordVisible: false,
+      is_password_visible: false,
       validation_message: "",
       error: {
         email: "",
         password: "",
         sub_domain: "",
       },
-      loginFormSchema: {},
     };
   },
   methods: {
@@ -158,44 +171,53 @@ const LoginPage = Vue.extend({
     },
 
     async login() {
-      return loginFormSchema
-        .validate(this.form)
-        .then(async () => {
-          const userData: UserInterface = {
-            email: this.form.email,
-            password: this.form.password,
-            sub_domain: this.form.sub_domain,
+      const onSuccess = async () => {
+        const { email, password, sub_domain, is_remamber } = this.form;
+        const userData: UserInterface = {
+          email,
+          password,
+          sub_domain,
+        };
+
+        await this.doLogin(userData);
+
+        if (is_remamber) {
+          Storage.set("login_credentials", { ...userData, is_remamber });
+        } else {
+          Storage.remove("login_credentials");
+        }
+
+        if (this.isLoggedIn()) {
+          this.$router.push("/");
+          return;
+        }
+
+        const { message, details } = this.responseError();
+
+        this.validation_message =
+          message ||
+          this.$vuetify.lang.t("$vuetify.fill_all_required_fields_message");
+
+        if (details)
+          this.error = {
+            ...this.error,
+            ...details,
           };
 
-          await this.doLogin(userData);
-          if (this.isLoggedIn()) {
-            this.$router.push("/");
-            return;
-          }
+        this.form = {
+          ...this.form,
+          password: "",
+        };
+        this.is_submit_enabled = false;
+      };
 
-          const { message, details } = this.responseError();
+      const onError = (err: any) => {
+        this.validation_message = this.$vuetify.lang.t(
+          "$vuetify.fill_all_required_fields_message"
+        );
+      };
 
-          this.validation_message =
-            message ||
-            this.$vuetify.lang.t("$vuetify.fill_all_required_fields_message");
-
-          if (details)
-            this.error = {
-              ...this.error,
-              ...details,
-            };
-
-          this.form = {
-            ...this.form,
-            password: "",
-          };
-          this.is_submit_enabled = false;
-        })
-        .catch((err: any) => {
-          this.validation_message = this.$vuetify.lang.t(
-            "$vuetify.fill_all_required_fields_message"
-          );
-        });
+      return loginFormSchema.validate(this.form).then(onSuccess).catch(onError);
     },
 
     switchLang() {

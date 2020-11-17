@@ -1,9 +1,7 @@
-@import "~vuetify/src/styles/styles.sass";
-@import "~vuetify/src/components/VBtn/_variables.scss";
-
 // root font size
 $font-size-root: 10px;
 $line-height-root: 14px;
+$input-font-size: 1.2rem !default;
 
 $list-item-dense-title-line-height: 1.5rem;
 $color-pack: false;
@@ -16,25 +14,23 @@ $list-item-title-font-size: 0.929rem;
 $list-item-dense-title-font-size: 0.929rem;
 $list-item-dense-title-font-weight: initial;
 
-// buttons fonts
-$btn-font-sizes: map-merge(
-  $btn-font-sizes,
-  (
-    "x-small": 0.8rem,
-    "small": 1rem,
-    "default": 1.6rem,
-    "large": 1.4rem,
-    "x-large": 1.6rem,
-  )
-);
-
 $fab-icon-sizes: (
   "small": 20,
 );
+
+$btn-font-sizes: (
+  "x-small": 0.8rem,
+  "small": 1rem,
+  "default": 1.6rem,
+  "large": 1.4rem,
+  "x-large": 1.6rem,
+);
+
 $btn-sizes: (
   "default": 41,
   "large": 54,
 );
+
 $headings: (
   "h1": (
     "size": 3.3125rem,
@@ -45,18 +41,3 @@ $headings: (
     "line-height": 1.5em,
   ),
 );
-// colors
-// $colors: map-merge(
-//   $colors,
-//   (
-//     "dark": "#263238",
-//     "success": "#00E096",
-//     "warning": "#FF9200",
-//     "white": "#ffffff",
-//     "light": "#f1f5f8",
-//     "primary": "#00C2F0",
-//     "secondary": "#b0bec5",
-//     "accent": "#FF9200",
-//     "error": "#b71c1c",
-//   )
-// );

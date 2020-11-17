@@ -1,4 +1,4 @@
-// @import "~vuetify/src/styles/styles.sass";
+@import "~vuetify/src/styles/styles.sass";
 @import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
@@ -51,7 +51,7 @@
   }
   // text
   input {
-    font-size: 1.2rem;
+    // font-size: 1.2rem;
     line-height: 1.4rem;
     letter-spacing: 0.011rem;
     color: var(--v-gunmetal-base);
@@ -89,4 +89,23 @@
     margin: 0px !important;
     padding: 0px !important;
   }
+}
+
+/**
+* Input selection amination as the styles guide
+**/
+.v-input--selection-controls
+  .v-input--selection-controls__input:hover
+  .v-input--selection-controls__ripple:before {
+  background: #8f9bb3 !important;
+  transform: scale(1) !important;
+}
+
+.v-input--selection-controls__ripple:before {
+  border-radius: 6px !important;
+}
+
+.v-ripple__container {
+  transform: scale(1) !important;
+  border-radius: 6px !important;
 }

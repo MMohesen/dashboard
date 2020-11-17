@@ -10,7 +10,7 @@
   }
 
   .auth-card {
-    min-width: 100px;
+    min-width: 10rem;
     display: flex;
     justify-content: center;
     align-self: center;
@@ -18,7 +18,7 @@
   }
 
   .slider-box {
-    width: 490px;
+    width: 49rem;
     position: relative;
     .v-image,
     .v-carousel-slider {
@@ -28,16 +28,16 @@
     }
     .v-carousel__controls {
       justify-content: flex-start;
-      padding: 0px 30px;
+      padding: 0rem 3rem;
     }
     .v-btn:before {
       background-color: none !important;
     }
 
     .v-carousel__controls__item {
-      margin: 0px;
+      margin: 0rem;
       i {
-        font-size: 24px !important;
+        font-size: 2.4rem !important;
       }
       &.v-btn--active {
         &:before,
@@ -51,27 +51,27 @@
     }
 
     .slide-description {
-      bottom: 50px;
+      bottom: 5rem;
       position: absolute;
       top: auto;
-      padding: 0px 30px;
+      padding: 0rem 3rem;
       label {
-        font-size: 16px;
-        line-height: 25px;
-        letter-spacing: -0.0571429px;
+        font-size: 1.6rem;
+        line-height: 2.5rem;
+        letter-spacing: -0.0057rem;
         color: var(--v-light-base);
         display: block;
       }
       span {
-        font-size: 12px;
-        line-height: 25px;
+        font-size: 1.2rem;
+        line-height: 2.5rem;
         color: var(--v-light-base);
         display: block;
       }
     }
   }
 
-  @media screen and (max-device-width: 450px) {
+  @media screen and (max-device-width: 45rem) {
     .slider-box {
       display: none;
     }

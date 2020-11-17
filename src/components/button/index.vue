@@ -42,4 +42,12 @@ export default Button;
   background-color: var(--v-primary-base) !important;
   opacity: 0.5;
 }
+
+v-btn.v-size--default {
+  font-size: 1.4rem;
+}
+
+.v-btn:not(.v-btn--round).v-size--default {
+  height: 50px !important;
+}
 </style>

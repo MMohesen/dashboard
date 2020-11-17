@@ -66,7 +66,7 @@ export default Input;
   }
   // text
   input {
-    font-size: 1.2rem;
+    // font-size: 1.2rem;
     line-height: 1.4rem;
     letter-spacing: 0.011rem;
     color: var(--v-gunmetal-base);

@@ -31,7 +31,7 @@
               @keyup="() => validate('sub_domain')"
               outlined
             />
-            <span class="dmain-title"> .posrocket.com </span>
+            <span class="domain-title"> .posrocket.com </span>
           </div>
           <div class="input-container">
             <v-text-field
@@ -132,9 +132,9 @@ const ResetPage = Vue.extend({
           this.error[field] = "";
           this.is_submit_enabled = true;
         })
-        .catch(({ message }) => {
+        .catch((error) => {
           this.is_submit_enabled = false;
-          this.error[field] = message;
+          this.error[field] = error?.message;
         });
     },
 

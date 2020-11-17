@@ -54,6 +54,12 @@ const routes: Array<RouteConfig> = [
     component: () => import("../views/Catalog.vue"),
     meta: { isAuth: true, service: "catalog", title: "POSRocket | Catalog" },
   },
+  {
+    path: "*",
+    name: "404",
+    component: () => import("../views/errors/404.vue"),
+    meta: { title: "POSRocket | 404 not found" },
+  },
 ];
 
 const router = new VueRouter({

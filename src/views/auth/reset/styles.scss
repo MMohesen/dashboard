@@ -24,12 +24,14 @@
       max-width: 240px;
     }
 
-    .dmain-title {
+    .domain-title {
       font-size: 14px;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 0.15px;
       color: var(--v-gunmetal-base);
+      bottom: 5px;
+      position: relative;
     }
   }
   .back-link {
