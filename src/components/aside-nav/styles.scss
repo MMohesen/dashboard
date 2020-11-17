@@ -1,21 +1,35 @@
 .app-aside-nav {
-  .v-list {
-    padding-right: 0px;
+  padding: 3rem 0rem 0rem;
+  .nav-v-list {
+    padding: 0rem;
   }
+  .nav-separator {
+    background: #37474f;
+    height: 0.1rem;
+    width: 90%;
+    margin: 2.1rem auto;
+  }
+
   .v-list-item {
-    border-right: 4px solid transparent;
-    border-radius: 0px !important;
+    border-right: 0.4rem solid transparent;
+    border-radius: 0rem !important;
     .v-list-item__title {
       color: #fff;
     }
 
-    .v-icon {
-      color: #fff;
+    .img-icon {
+      width: 2rem;
+      height: 2rem;
+      object-fit: cover;
+    }
+
+    .v-list-item__icon {
+      align-items: center;
     }
 
     &:hover,
     &.v-list-item--active {
-      border-right: 4px solid #2eb2dc;
+      border-right: 0.4rem solid #2eb2dc;
       background-color: #36474f !important;
       &::before {
         opacity: 0 !important;
@@ -25,6 +39,57 @@
       }
       .v-icon {
         color: #fff;
+      }
+    }
+  }
+
+  .footer-logo {
+    height: 3.6rem;
+    margin: auto;
+    margin-bottom: 1.6rem;
+  }
+
+  &:not(.v-navigation-drawer--mini-variant) {
+    .footer-logo {
+      background: url("~@/assets/navbar/logo-footer.svg") center center
+        no-repeat;
+      background-size: 17.1rem 3.6rem;
+      width: 17.1rem;
+    }
+
+    .v-list-item {
+      padding: 0 2.1rem 0 3.5rem;
+    }
+    .v-list-item__icon {
+      margin: 0.8rem 2rem 0.8rem 0rem;
+    }
+  }
+
+  &.v-navigation-drawer--mini-variant {
+    .footer-logo {
+      background: url("~@/assets/navbar/logo-footer-collapse.svg") center center
+        no-repeat;
+      background-size: 3rem 3.6rem;
+      width: 3rem;
+    }
+
+    .v-list-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 4.5rem;
+      .v-list-item__icon {
+        margin: 0rem;
+        align-self: center;
+        display: flex;
+      }
+      .v-list-item__content {
+        display: none;
+      }
+      &:after,
+      &:after {
+        display: none;
       }
     }
   }

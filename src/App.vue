@@ -6,7 +6,7 @@
       <AsideNavBar v-if="isLoggedIn" />
       <div class="page-container">
         <router-view />
-        <Footer v-show="!isLoading" />
+        <Footer v-show="!isLoading && !isLoggedIn" />
       </div>
     </v-main>
     <Feedback />
