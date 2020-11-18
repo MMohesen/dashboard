@@ -43,7 +43,7 @@
       />
 
       <div class="text-center">
-        <v-menu offset-y :right="300">
+        <v-menu offset-y>
           <template v-slot:activator="{ on, attrs }">
             <div class="user-box" v-bind="attrs" v-on="on">
               <v-icon class="user-avatar" color="#ccc" v-bind="attrs" v-on="on">

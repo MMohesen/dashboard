@@ -7,11 +7,9 @@ axios.defaults.baseURL = ENDPOINTS.BASE_URL;
 axios.interceptors.request.use(
   (config) => {
     config.headers.common["Accept"] = "application/json";
-    config.headers.common["access-control-allow-header"] = "*";
-    config.headers.common["Access-Control-Allow-Origin"] = "*";
     const token = Storage.get("dashboard_token");
     if (!!token) {
-      config.headers.common["X-POS-User-Agent"] = `Bearer ${token}`;
+      config.headers.common["Authorization"] = `${token}`;
     }
     return config;
   },
