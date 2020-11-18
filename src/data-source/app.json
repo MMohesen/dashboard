@@ -34,7 +34,9 @@
         "reports": "Reports",
         "customers": "Customers",
         "intgration": "Intgration",
-        "settings": "Settings"
+        "settings": "Settings",
+        "account_settings": "Account Settings",
+        "logout": "Log Out"
       },
       "footer": {
         "about_us": "About Us",
@@ -70,7 +72,9 @@
         "reports": "التقارير",
         "customers": "العملاء",
         "intgration": "دمج",
-        "settings": "إعدادات"
+        "settings": "إعدادات",
+        "account_settings": "إعدادت الحساب",
+        "logout": "تسجيل خروج"
       },
       "footer": {
         "about_us": "عنا",

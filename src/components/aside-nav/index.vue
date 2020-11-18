@@ -5,6 +5,7 @@
     color="dark"
     class="app-aside-nav"
     width="237"
+    mini-variant-width="75"
   >
     <v-list dense nav class="nav-v-list">
       <v-list-item

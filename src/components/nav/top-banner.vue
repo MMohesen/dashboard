@@ -1,6 +1,6 @@
 <template>
   <div class="app-nav-bar">
-    <v-app-bar flat color="dark" class="banar-nav" height="44">
+    <v-app-bar flat color="dark" class="banar-nav" height="46">
       <p class="trial-maessage">
         {{ this.$vuetify.lang.t("$vuetify.banner_message") }}
       </p>

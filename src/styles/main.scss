@@ -109,3 +109,14 @@
   transform: scale(1) !important;
   border-radius: 6px !important;
 }
+
+// $colors: (
+//   "emerald": "#2ecc71",
+//   "carrot": "#e67e22",
+// );
+
+// @each $name, $hexa in $colors {
+//   .#{$name} {
+//     color: #{$hexa};
+//   }
+// }

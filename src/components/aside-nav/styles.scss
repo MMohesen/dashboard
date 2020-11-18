@@ -61,9 +61,6 @@
     .v-list-item {
       padding: 0 2.1rem 0 3.5rem;
     }
-    .v-list-item__icon {
-      margin: 0.8rem 2rem 0.8rem 0rem;
-    }
   }
 
   // if it mini
@@ -93,4 +90,20 @@
       }
     }
   }
+}
+
+.v-application--is-ltr
+  .app-aside-nav:not(.v-navigation-drawer--mini-variant)
+  .v-list-item__action:first-child,
+.v-application--is-ltr
+  .app-aside-nav:not(.v-navigation-drawer--mini-variant)
+  .v-list-item__icon:first-child {
+  margin-right: 20px !important;
+}
+.v-application--is-rtl
+  .app-aside-nav:not(.v-navigation-drawer--mini-variant)
+  .v-list-item__action:first-child,
+.v-application--is-rtl
+  .app-aside-nav:not(.v-navigation-drawer--mini-variant).v-list-item__icon:first-child {
+  margin-left: 20px !important;
 }

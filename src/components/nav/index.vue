@@ -68,7 +68,9 @@
                 </v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title
-                    v-text="'Account Settings'"
+                    v-text="
+                      this.$vuetify.lang.t('$vuetify.menu.account_settings')
+                    "
                   ></v-list-item-title>
                 </v-list-item-content>
               </v-list-item>
@@ -81,8 +83,10 @@
                     :height="13"
                   />
                 </v-list-item-icon>
-                <v-list-item-content>
-                  <v-list-item-title v-text="'Logout'"></v-list-item-title>
+                <v-list-item-content class="error--text">
+                  <v-list-item-title
+                    v-text="this.$vuetify.lang.t('$vuetify.menu.logout')"
+                  ></v-list-item-title>
                 </v-list-item-content>
               </v-list-item>
             </v-list-item-group>
@@ -93,36 +97,37 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import Vue from "vue";
 import "./styles.scss";
 import DataJson from "@/data-source/app.json";
 import TopBanner from "./top-banner.vue";
 import $eventHub from "../eventHub";
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 const NavBar = Vue.extend({
   name: "NavBar",
   components: { TopBanner },
   data() {
     return {
-      appName: DataJson?.app?.name || "Not Set",
-      userName: DataJson?.user?.name || "Not Set",
-      userType: DataJson?.user?.type || "Not Set",
+      appName: "Not Set",
+      userName: "Not Set",
+      userType: "Admin",
       appLogo: require("@/assets/images/header/logo.png"),
-      translation: { ...DataJson?.translation.en },
-
-      items: [
-        { title: "Click Me" },
-        { title: "Click Me" },
-        { title: "Click Me" },
-        { title: "Click Me 2" },
-      ],
     };
+  },
+
+  mounted(){
+    const {email, first_name, last_name} = this.userData();
+    this.userName = `${first_name} ${last_name}`;
   },
   methods: {
     ...mapActions({
       doLogout: "User/doLogOut",
+    }),
+
+    ...mapGetters({
+      userData: "User/user",
     }),
 
     toggleLeftSide() {
