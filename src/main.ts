@@ -35,6 +35,28 @@ Vue.mixin({
   },
 });
 
+Vue.config.errorHandler = (err, vm, info) => {
+  // TODO: Perform any custom logic or log to server
+  console.log("Vue.config Error - CentralizeErrorHandler: ", err, vm, info);
+};
+
+// window.onerror = (
+//   message: Event | string,
+//   url?: string,
+//   lineNo?: number,
+//   columnNo?: number,
+//   error?: Error
+// ) => {
+//   console.log(
+//     "onError - CentralizeErrorHandler: ",
+//     message,
+//     url,
+//     lineNo,
+//     columnNo,
+//     error
+//   );
+// };
+
 export default new Vue({
   router,
   store,

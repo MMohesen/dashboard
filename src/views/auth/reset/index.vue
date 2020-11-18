@@ -19,7 +19,7 @@
         </div>
         <div class="card-body">
           <div class="input-container" dir="ltr">
-            <v-text-field
+            <Input
               v-model="form.sub_domain"
               :label="$vuetify.lang.t('$vuetify.sub_domain')"
               :placeholder="$vuetify.lang.t('$vuetify.sub_domain')"
@@ -34,7 +34,7 @@
             <span class="domain-title"> .posrocket.com </span>
           </div>
           <div class="input-container">
-            <v-text-field
+            <Input
               v-model="form.email"
               :label="$vuetify.lang.t('$vuetify.email_address')"
               :placeholder="$vuetify.lang.t('$vuetify.email_address')"

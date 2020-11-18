@@ -66,7 +66,7 @@
                     :height="13"
                   />
                 </v-list-item-icon>
-                <v-list-item-content>
+                <v-list-item-content class="dark--text">
                   <v-list-item-title
                     v-text="
                       this.$vuetify.lang.t('$vuetify.menu.account_settings')

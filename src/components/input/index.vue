@@ -1,10 +1,11 @@
 <template>
   <v-text-field
+    :value="value"
     v-bind="resetProps"
-    @input="this.input"
     @keypress="this.keypress"
     @blur="this.blur"
     @click:append="this.appendOnClick"
+    @input="$emit('update', $event.target.value)"
   />
 </template>
 
@@ -13,6 +14,10 @@ import Vue from "vue";
 
 const Input = Vue.extend({
   name: "Input",
+  model: {
+    prop: "value",
+    event: "update",
+  },
   props: {
     appendOnClick: {
       default: () => {},
