@@ -47,7 +47,7 @@
           :onClick="setUserAbilityDelete"
           :title="'Set User Ability To Delete a Book'"
           :elevation="20"
-          :disabled="true"
+          :disabled="false"
           :x-large="true"
         >
           <template #loading v-if="true">
@@ -103,20 +103,22 @@
     </AppDialog>
 
     <Can do="manage" :on="'Book'" field="title">
-      <span>Able to Manage book </span>
+      <h2>Able to Manage book</h2>
     </Can>
 
     <br />
 
     <Can do="read" :on="'Book'" field="title">
-      <span>Able to read book </span>
+      <h2>Able to read book</h2>
     </Can>
 
     <br />
     <Can do="delete" :on="'Book'" field="title">
-      <span>Able to Delete book </span>
+      <h2>Able to Delete book</h2>
     </Can>
-    <div class="px-3">
+    <br />
+    <br />
+    <div class="px-3 py-5">
       <v-row>
         <Button
           :color="'primary'"

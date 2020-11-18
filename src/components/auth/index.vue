@@ -39,16 +39,16 @@ const AuthCard = Vue.extend({
     return {
       items: [
         {
-          src: require("@/assets/images/login/slider-1.png"),
+          src: require("@/assets/images/login/slider-1.svg"),
         },
         {
-          src: require("@/assets/images/login/slider-1.png"),
+          src: require("@/assets/images/login/slider-1.svg"),
         },
         {
-          src: require("@/assets/images/login/slider-1.png"),
+          src: require("@/assets/images/login/slider-1.svg"),
         },
         {
-          src: require("@/assets/images/login/slider-1.png"),
+          src: require("@/assets/images/login/slider-1.svg"),
         },
       ],
     };

@@ -3,6 +3,8 @@ import Storage from "@/services/storage";
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Catalog from "../views/Catalog.vue";
+import LoginPage from "@/views/auth/login/index.vue";
+import ErrorPage from "@/views/errors/404.vue";
 import { $eventHub } from "@/components";
 
 Vue.use(VueRouter);
@@ -17,7 +19,7 @@ const routes: Array<RouteConfig> = [
   {
     path: "/login",
     name: "Login",
-    component: () => import("@/views/auth/login/index.vue"),
+    component: LoginPage,
     meta: { isAuth: false, title: "POSRocket | Login" },
   },
   {
@@ -57,7 +59,7 @@ const routes: Array<RouteConfig> = [
   {
     path: "*",
     name: "404",
-    component: () => import("../views/errors/404.vue"),
+    component: ErrorPage,
     meta: { title: "POSRocket | 404 not found" },
   },
 ];

@@ -41,6 +41,23 @@ const UserStore = {
     },
 
     async doLogin({ commit }: { commit: any }, user: any) {
+      // save user information on app storage
+      const session = new SessionModel({
+        user: {
+          email: "test",
+          first_name: "test",
+          last_name: "test",
+          id: "",
+        },
+        token: "test",
+      });
+
+      Storage.set("dashboard_user", session.getUser(), true);
+      Storage.set("dashboard_token", session.getToken(), true);
+
+      // trigger store user is logged in
+      await commit("setUserLoggedIn", session.getUser());
+
       return await axios
         .post(ENDPOINTS.LOGIN, user)
         .then(async ({ data }: { data: SessionInterface }) => {
@@ -63,13 +80,10 @@ const UserStore = {
         .post(ENDPOINTS.RESET_PASSWORD, user)
         .then(async (data) => {
           // save user information on app storage
-          console.log(data);
-          debugger;
           await commit("setSuccess", true);
         })
         .catch(async ({ error }: { error: any }) => {
           await commit("setSuccess", false);
-          debugger;
           await commit("setError", error);
         });
     },
