@@ -9,7 +9,7 @@
         <Footer v-show="!isLoading && !isLoggedIn" />
       </div>
     </v-main>
-    <Feedback />
+    <Feedback v-show="!isLoggedIn" />
   </v-app>
 </template>
 

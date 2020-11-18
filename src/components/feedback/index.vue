@@ -17,7 +17,7 @@ export default Feedback;
 .app-feedback {
   position: fixed;
   right: 0px;
-  z-index: 99;
+  z-index: 1;
   top: 0px;
   bottom: 48px;
   margin: auto;
