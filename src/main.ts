@@ -7,13 +7,14 @@ import vuetify from "./plugins/vuetify";
 import VueCookies from "vue-cookies";
 import { abilitiesPlugin } from "@casl/vue";
 import ability from "./services/ability";
-import { Button, Input, Link, Footer, Feedback } from "@/components";
+import { Button, Input, Link, Footer, Feedback, Icon } from "@/components";
 import { Can } from "@casl/vue";
 
 Vue.use(VueCookies);
 Vue.use(abilitiesPlugin, ability);
 
 Vue.component("Can", Can);
+Vue.component("Icon", Icon);
 Vue.component("Button", Button);
 Vue.component("Input", Input);
 Vue.component("Link", Link);

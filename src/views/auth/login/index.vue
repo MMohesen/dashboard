@@ -181,13 +181,12 @@ const LoginPage = Vue.extend({
           sub_domain,
         };
 
-        await this.doLogin(userData);
-
         if (is_remamber) {
           Storage.set("login_credentials", { ...userData, is_remamber });
         } else {
           Storage.remove("login_credentials");
         }
+        await this.doLogin(userData);
 
         if (this.isLoggedIn()) {
           this.$router.push("/");

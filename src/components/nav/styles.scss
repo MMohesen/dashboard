@@ -1,9 +1,17 @@
-// @import "~vuetify/src/styles/styles.sass";
+@import "~vuetify/src/styles/styles.sass";
+
+.user-panale {
+  .v-list-item__icon {
+    margin-right: 0.4rem !important;
+    justify-content: center;
+  }
+}
 .app-nav-bar {
   position: relative;
+  z-index: 1;
 
   .v-toolbar__content {
-    padding: 0.5rem 3rem 0.5rem 2.2rem;
+    padding: 0.5rem 3rem 0.5rem 2.5rem;
   }
 
   .banar-nav {
@@ -45,30 +53,31 @@
   }
   .burger-btn {
     display: flex;
-    width: 36px;
-    margin: 0px 10px;
+    width: 3.6rem;
+    margin: 0rem 1rem;
     height: 100%;
     justify-content: center;
     align-items: center;
     position: relative;
     .v-image__image--contain {
-      width: 18px;
+      width: 1.8rem;
+      height: 1.2rem;
       position: absolute;
       margin: auto;
       left: 0;
       right: 0;
+      bottom: 0;
+      top: 0;
     }
   }
-  .btn-action {
-    &.v-icon {
-      margin: 0rem 0.5rem;
+  .app-icon {
+    padding: 1.2rem 1rem;
+    .icon {
+      margin: 0rem 0.6rem;
       cursor: pointer;
-      color: #000 !important;
       border: 0.1rem solid transparent;
-      padding: 1.28rem 1.44rem;
       &:hover {
         opacity: 0.6;
-        border: 0.1rem solid map-get($grey, lighten-3);
       }
     }
   }
@@ -102,18 +111,20 @@
       background-color: transparent !important;
     }
   }
-
   .user-box {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     border: 0.1rem solid map-get($grey, lighten-3);
     border-radius: 0.1rem;
-    padding: 0.64rem 1rem;
+    padding: 0.6rem 1rem;
+    height: 4.2rem;
+    width: 13rem;
+    position: relative;
 
     .user-avatar {
-      font-size: 3.6rem;
+      font-size: 3.2rem;
     }
 
     .user-details {
@@ -123,17 +134,21 @@
       justify-content: center;
 
       .user-name {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         line-height: 1.6rem;
         text-transform: capitalize;
         font-weight: bold;
+        color: var(--v-default--base);
       }
 
       .user-type {
         font-weight: 400;
         text-transform: capitalize;
         font-size: 1rem;
-        line-height: 1.6rem;
+        line-height: 1.2rem;
+        font-style: italic;
+        // color: map-get(--v-gray--base, "darken1");
+        color: map-get($grey, lighten-1);
       }
     }
   }

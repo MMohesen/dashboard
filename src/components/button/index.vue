@@ -1,5 +1,6 @@
 <template>
   <v-btn @click="onClick" v-bind="resetProps">
+    <slot name="pre-icon" />
     <span class="btn-title">
       {{ title }}
     </span>
@@ -35,31 +36,11 @@ export default Button;
 <style lang="scss">
 .btn-title {
   display: inline-block;
-  padding: 0px 15px;
+  padding: 0rem 1.5rem;
 }
 .theme--light.v-btn.v-btn--disabled:not(.v-btn--flat):not(.v-btn--text):not(.v-btn-outlined) {
   color: var(--v-white-base) !important;
   background-color: var(--v-primary-base) !important;
   opacity: 0.5;
 }
-
-// v-btn.v-size--default {
-//   font-size: 1.4rem;
-// }
-
-// .v-btn.v-size--default {
-//   height: 48px !important;
-// }
-
-// .v-btn.v-size--large {
-//   height: 56px !important;
-// }
-
-// .v-btn.v-size--small {
-//   height: 40px !important;
-// }
-
-// .v-btn.v-size--x-small {
-//   height: 32px !important;
-// }
 </style>

@@ -11,3 +11,4 @@ export { default as Input } from "./input/index.vue";
 export { default as Link } from "./link/index.vue";
 export { default as Footer } from "./footer/index.vue";
 export { default as Feedback } from "./feedback/index.vue";
+export { default as Icon } from "./icon/index.vue";

@@ -76,6 +76,7 @@ const UserStore = {
 
     async doLogOut({ commit }: { commit: any }) {
       Storage.remove("dashboard_user");
+      Storage.remove("dashboard_token");
       await commit("setUserLoggedIn", null);
     },
   },
