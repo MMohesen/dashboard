@@ -41,7 +41,7 @@
             />
           </div>
           <div class="input-container">
-            <Input
+            <v-text-field
               :label="$vuetify.lang.t('$vuetify.password')"
               :placeholder="$vuetify.lang.t('$vuetify.password')"
               :type="is_password_visible ? 'text' : 'password'"

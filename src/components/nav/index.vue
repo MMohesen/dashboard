@@ -7,10 +7,9 @@
       </div>
       <div class="links">
         <div class="burger-btn">
-          <v-img
+          <Icon
+            :path="require('@/assets/navbar/burger.svg')"
             @click="toggleLeftSide"
-            :src="require('@/assets/navbar/burger.svg')"
-            contain
             :width="18"
           />
         </div>

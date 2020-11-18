@@ -34,5 +34,6 @@ export default Icon;
 .v-btn--icon {
   width: initial !important;
   height: initial !important;
+  cursor: pointer;
 }
 </style>

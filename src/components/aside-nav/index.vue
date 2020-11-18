@@ -26,7 +26,9 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <v-list-item-title>
+            {{ $vuetify.lang.t(`$vuetify.${item.title}`) }}
+          </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -41,6 +43,7 @@
 import Storage from "@/services/storage";
 import Vue from "vue";
 import { $eventHub } from "..";
+import Links from "./links.js";
 import "./styles.scss";
 
 const AsideNav = Vue.extend({
@@ -63,51 +66,7 @@ const AsideNav = Vue.extend({
 
   computed: {
     getNavItems() {
-      return [
-        {
-          title: this.$vuetify.lang.t("$vuetify.menu.dashboard"),
-          icon: require("@/assets/navbar/dashboard-icon.svg"),
-          href: "dashboard",
-        },
-        {
-          title: this.$vuetify.lang.t("$vuetify.menu.catalog"),
-          icon: require("@/assets/navbar/catalog-icon.svg"),
-          href: "catalog",
-        },
-        {
-          title: this.$vuetify.lang.t("$vuetify.menu.inventroy"),
-          icon: require("@/assets/navbar/inventroy-icon.svg"),
-          iconWidth: 21,
-          iconHeight: 19,
-          href: "inventroy",
-        },
-        {
-          title: this.$vuetify.lang.t("$vuetify.menu.reports"),
-          icon: require("@/assets/navbar/reports-icon.svg"),
-          iconWidth: 20,
-          iconHeight: 16,
-          href: "reports",
-        },
-        {
-          title: this.$vuetify.lang.t("$vuetify.menu.customers"),
-          icon: require("@/assets/navbar/customers-icon.svg"),
-          iconWidth: 20,
-          iconHeight: 17,
-          href: "customers",
-        },
-        {
-          title: this.$vuetify.lang.t("$vuetify.menu.intgration"),
-          icon: require("@/assets/navbar/intgration-icon.svg"),
-          iconWidth: 18,
-          iconHeight: 23,
-          href: "intgration",
-        },
-        {
-          title: this.$vuetify.lang.t("$vuetify.menu.settings"),
-          icon: require("@/assets/navbar/settings-icon.svg"),
-          href: "settings",
-        },
-      ];
+      return Links
     },
   },
 
