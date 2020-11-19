@@ -41,7 +41,7 @@
             />
           </div>
           <div class="input-container">
-            <v-text-field
+            <Input
               :label="$vuetify.lang.t('$vuetify.password')"
               :placeholder="$vuetify.lang.t('$vuetify.password')"
               :type="is_password_visible ? 'text' : 'password'"
@@ -54,7 +54,7 @@
               :append-icon="
                 is_password_visible ? 'visibility' : 'visibility_off'
               "
-              @click:append="() => (is_password_visible = !is_password_visible)"
+              @click.native="() => (is_password_visible = !is_password_visible)"
               @keyup="() => validate('password')"
             />
           </div>
