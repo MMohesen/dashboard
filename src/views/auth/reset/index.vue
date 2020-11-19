@@ -53,6 +53,7 @@
             class="mb-5"
             elevation="0"
             block
+            large
             :onClick="doReset"
             :disabled="!is_submit_enabled"
             :title="$vuetify.lang.t('$vuetify.reset_password')"

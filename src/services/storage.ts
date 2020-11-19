@@ -1,5 +1,13 @@
 import Vue from "vue";
 
+/**
+ * Class storage
+ * @example Storage.set('KEY', value :any, isCookies:boolean, ?Date(...))
+ * @example Storage.get('KEY')
+ * @example Storage.remove('KEY')
+ * @example Storage.check('KEY')
+ */
+
 const Storage = {
   set(
     key: string,
@@ -30,9 +38,4 @@ const Storage = {
   },
 };
 
-/**
- * Class storage
- * @example Storage.set('KEY', {V1:'Value1'}, isCookies:boolean, ?Date(...))
- * @example Storage.get('KEY')
- */
 export default Storage;

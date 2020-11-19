@@ -3,6 +3,7 @@
     <v-card class="auth-card rounded-0 v-sheet--outlined">
       <slot name="form" />
       <div class="slider-box">
+        <div class="gradients"></div>
         <v-carousel
           hide-delimiter-background
           delimiter-icon="mdi-minus"
@@ -17,10 +18,8 @@
             min-height="'100%'"
           >
             <div class="slide-description">
-              <label>
-                A point-of-sale that helps you sell and grow {{ i }}
-              </label>
-              <span>https://www.posrocket.com/</span>
+              <label>{{ $vuetify.lang.t("$vuetify.auth_slider_text") }}</label>
+              <span>www.posrocket.com</span>
             </div>
           </v-carousel-item>
         </v-carousel>
@@ -39,16 +38,10 @@ const AuthCard = Vue.extend({
     return {
       items: [
         {
-          src: require("@/assets/images/login/slider-1.svg"),
+          src: require("@/assets/images/login/slide-1.png"),
         },
         {
-          src: require("@/assets/images/login/slider-1.svg"),
-        },
-        {
-          src: require("@/assets/images/login/slider-1.svg"),
-        },
-        {
-          src: require("@/assets/images/login/slider-1.svg"),
+          src: require("@/assets/images/login/slide-2.png"),
         },
       ],
     };

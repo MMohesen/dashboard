@@ -294,6 +294,8 @@ export default Vue.extend({
   methods: {
     toggleDrawer() {
       this.isDrawerVisible = !this.isDrawerVisible;
+      console.log(test);
+      log("App Log *****************************");
     },
 
     toggleDrawer2() {

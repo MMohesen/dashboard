@@ -27,6 +27,7 @@
       "fill_all_required_fields_message": "Please Fill In The Required Fields",
       "success_reset_title": "Password reset has been requested.",
       "success_reset_message": "If the provided email exists in our system, a new password will be sent.",
+      "auth_slider_text": "A point-of-sale that helps you sell and grow",
       "menu": {
         "catalog": "Catalog",
         "dashboard": "Dashboard",
@@ -65,6 +66,7 @@
       "fill_all_required_fields_message": "يرجى تعبئة الحقول المطلوبة",
       "success_reset_title": "تم طلب إعادة تعيين كلمة المرور.",
       "success_reset_message": "إذا كان البريد الإلكتروني المقدم موجودًا في نظامنا ، فسيتم إرسال كلمة مرور جديدة.",
+      "auth_slider_text": "نقطة بيع تساعدك على البيع والنمو",
       "menu": {
         "catalog": "فهرس",
         "dashboard": "لوحة القيادة",

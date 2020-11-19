@@ -15,8 +15,16 @@
     justify-content: center;
     align-self: center;
     flex-direction: row;
+    max-width: 97.6rem;
   }
 
+  .gradients {
+    background: linear-gradient(
+      0deg,
+      #0072ff -94.82%,
+      rgba(35, 31, 31, 0.0001) 101.16%
+    );
+  }
   .slider-box {
     width: 49rem;
     position: relative;

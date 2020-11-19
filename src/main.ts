@@ -9,6 +9,7 @@ import { abilitiesPlugin } from "@casl/vue";
 import ability from "./services/ability";
 import { Button, Input, Link, Footer, Feedback, Icon } from "@/components";
 import { Can } from "@casl/vue";
+import { AppLog } from "./services/helper";
 
 Vue.use(VueCookies);
 Vue.use(abilitiesPlugin, ability);
@@ -29,6 +30,7 @@ Vue.mixin({
       get global() {
         return {
           test: "value-test",
+          log: AppLog.log,
         };
       },
     };

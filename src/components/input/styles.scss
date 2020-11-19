@@ -1,9 +1,9 @@
 .v-input {
   border-radius: 0.2rem;
-  margin: 10px 0px !important;
+  margin: 1rem 0rem !important;
 
   fieldset {
-    border: 1px solid rgba(0, 0, 0, 0.32);
+    border: 0.1rem solid rgba(0, 0, 0, 0.32);
   }
   .v-label {
     font-weight: bold;
@@ -24,7 +24,7 @@
     line-height: 1.4rem;
     letter-spacing: 0.011rem;
     color: var(--v-gunmetal-base);
-    text-indent: 1px;
+    text-indent: 0.1rem;
 
     &::placeholder {
       color: var(--v-bali_hai-base) !important;
@@ -44,8 +44,8 @@
 .v-text-field--enclosed .v-input__prepend-inner,
 .v-text-field--enclosed .v-input__append-inner,
 .v-text-field--enclosed .v-input__append-outer {
-  top: 0px;
-  bottom: 0px;
+  top: 0;
+  bottom: 0x;
   margin: auto;
 }
 
@@ -55,7 +55,13 @@
 .error--text {
   .v-text-field__details {
     display: block;
-    margin: 0px !important;
-    padding: 0px !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
+}
+
+.v-text-field--outlined .v-label--active {
+  transform: translateY(-26px) scale(1);
+  background: #fff;
+  padding: 0px 7px 0px 2px;
 }
