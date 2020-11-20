@@ -7,7 +7,7 @@
       "repo": "git@github.com:MMohesen/dashboard-V3.git",
       "ref": "origin/master",
       "path": "/var/www/prod",
-      "post-deploy": "yarn && yarn build && pm2 startOrRestart ecosystem.json --env production"
+      "post-deploy": "yarn && yarn build && pm2 startOrRestart ecosystem.config.js --env production"
     },
     "development": {
       "user": "root",
@@ -15,7 +15,7 @@
       "repo": "git@github.com:MMohesen/dashboard-V3.git",
       "ref": "origin/master",
       "path": "/var/www/dev",
-      "post-deploy": "yarn && yarn build && pm2 startOrRestart ecosystem.json --env development"
+      "post-deploy": "yarn && yarn build && pm2 startOrRestart ecosystem.config.js --env development"
     }
   }
 }
