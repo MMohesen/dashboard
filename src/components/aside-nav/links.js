@@ -4,7 +4,28 @@ export default [
   {
     title: "menu.dashboard",
     icon: require("@/assets/navbar/dashboard-icon.svg"),
-    href: "dashboard",
+    links: [
+      {
+        title: "menu.dashboard",
+        icon: require("@/assets/navbar/dashboard-icon.svg"),
+        href: "dashboard-zz",
+      },
+      {
+        title: "menu.dashboard",
+        icon: require("@/assets/navbar/dashboard-icon.svg"),
+        href: "dashboard-aa",
+      },
+      {
+        title: "menu.dashboard",
+        icon: require("@/assets/navbar/dashboard-icon.svg"),
+        href: "dashboard-ww",
+      },
+      {
+        title: "menu.dashboard",
+        icon: require("@/assets/navbar/dashboard-icon.svg"),
+        href: "dashboard-ss",
+      },
+    ],
   },
   {
     title: "menu.catalog",

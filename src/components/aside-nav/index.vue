@@ -8,30 +8,12 @@
     mini-variant-width="75"
   >
     <v-list dense nav class="nav-v-list">
-      <v-list-item
-        v-for="item in getNavItems"
-        :key="item.title"
-        link
-        :to="item.href"
-      >
-        <v-list-item-icon>
-          <v-img
-            :lazy-src="item.icon"
-            :src="item.icon"
-            class="img-icon"
-            :width="item.iconWidth"
-            :height="item.iconHeight"
-            contain
-          />
-        </v-list-item-icon>
-
-        <v-list-item-content>
-          <v-list-item-title>
-            {{ $vuetify.lang.t(`$vuetify.${item.title}`) }}
-          </v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
+      <div v-for="item in getNavItems" :key="item.title">
+        <LinkItem :item="item" v-if="!item.links" />
+        <LinkGroup :item="item" v-if="!!item.links" />
+      </div>
     </v-list>
+
     <div class="nav-separator" />
     <template v-slot:append>
       <div class="footer-logo"></div>
@@ -44,10 +26,13 @@ import Storage from "@/services/storage";
 import Vue from "vue";
 import { $eventHub } from "..";
 import Links from "./links.js";
+import LinkItem from "./link-item";
+import LinkGroup from "./link-group";
 import "./styles.scss";
 
 const AsideNav = Vue.extend({
   name: "AsideNav",
+  components:{LinkItem, LinkGroup},
 
   mounted() {
     $eventHub.$on("toggleAppLeftSide", this.toggle);
@@ -61,6 +46,12 @@ const AsideNav = Vue.extend({
   data() {
     return {
       isMini: false,
+      cruds: [
+        ['Create', 'mdi-plus-outline'],
+        ['Read', 'mdi-file-outline'],
+        ['Update', 'mdi-update'],
+        ['Delete', 'mdi-delete'],
+      ],
     };
   },
 

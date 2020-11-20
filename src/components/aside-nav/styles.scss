@@ -1,4 +1,5 @@
 .app-aside-nav {
+  overflow: visible !important;
   padding: 3rem 0rem 0rem;
   .nav-v-list {
     padding: 0rem;
@@ -10,7 +11,8 @@
     margin: 2.1rem auto;
   }
 
-  .v-list-item {
+  .v-list-item,
+  .v-list-group__header {
     border-right: 0.4rem solid transparent;
     border-radius: 0rem !important;
     .v-list-item__title {
@@ -58,8 +60,9 @@
       width: 17.1rem;
     }
 
+    .v-list-group__header,
     .v-list-item {
-      padding: 0 2.1rem 0 3.5rem;
+      padding: 0 2.1rem 0 3.5rem !important;
     }
   }
 
@@ -72,11 +75,15 @@
       width: 3rem;
     }
 
-    .v-list-item {
+    .v-list-item,
+    .v-list-group__header {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      position: relative;
+      min-height: 45px;
+      min-width: 100%;
       .v-list-item__icon {
         margin: 0;
         align-self: center;
@@ -88,6 +95,31 @@
         min-height: auto;
       }
     }
+
+    .v-list-group__items {
+      left: 25px !important;
+      &::before {
+        top: 0rem !important;
+        left: 0px !important;
+      }
+      .v-list-item {
+        padding-left: 0px !important;
+        padding-top: 15px;
+        width: 100px;
+      }
+      .v-list-item__title {
+        padding: 0px !important;
+        &::before {
+          left: 0rem;
+        }
+      }
+    }
+  }
+
+  .v-list-group__header {
+    margin: 0px !important;
+    padding: 0px !important;
+    justify-content: center;
   }
 }
 
@@ -105,4 +137,19 @@
 .v-application--is-rtl
   .app-aside-nav:not(.v-navigation-drawer--mini-variant).v-list-item__icon:first-child {
   margin-left: 20px !important;
+}
+
+.v-navigation-drawer--mini-variant .v-list-group--sub-group {
+  display: block;
+}
+.v-navigation-drawer--mini-variant
+  .v-list-group--no-action
+  .v-list-group__items,
+.v-navigation-drawer--mini-variant .v-list-group--sub-group {
+  display: block;
+  position: absolute;
+  z-index: 9999999999999;
+  overflow: visible;
+  left: 0px;
+  background: #263238;
 }

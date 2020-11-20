@@ -26,7 +26,6 @@ const Button = Vue.extend({
   },
   computed: {
     resetProps(): any {
-      console.log("this.$attrs ", this.$attrs);
       return { ...this.$attrs };
     },
   },
