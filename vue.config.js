@@ -10,6 +10,10 @@ module.exports = {
   chainWebpack: (config) => {
     // config.plugins.delete("prefetch");
     // config.plugins.delete("preload");
+    config.plugin("fork-ts-checker").tap((args) => {
+      args[0].memoryLimit = process.env.NODE_ENV === "production" ? 1024 : 2048;
+      return args;
+    });
   },
   configureWebpack: {
     performance: {
