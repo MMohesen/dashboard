@@ -1,0 +1,21 @@
+{
+  "deploy": {
+    "production": {
+      "key": "~/.ssh/id_rsa",
+      "user": "root",
+      "host": "104.248.129.72",
+      "repo": "git@github.com:MMohesen/dashboard-V3.git",
+      "ref": "origin/master",
+      "path": "/var/www/prod",
+      "post-deploy": "yarn && yarn build && pm2 startOrRestart ecosystem.json --env production"
+    },
+    "development": {
+      "user": "root",
+      "host": "104.248.129.72",
+      "repo": "git@github.com:MMohesen/dashboard-V3.git",
+      "ref": "origin/master",
+      "path": "/var/www/dev",
+      "post-deploy": "yarn && yarn build && pm2 startOrRestart ecosystem.json --env development"
+    }
+  }
+}
