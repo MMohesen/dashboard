@@ -42,7 +42,7 @@ const App = Vue.extend({
   mounted() {
     setTimeout(() => {
       this.isLoading = false;
-    }, 200);
+    }, 201);
   },
 
   computed: {
