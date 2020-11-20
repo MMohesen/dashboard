@@ -11,3 +11,5 @@ module.exports = {
     },
   ],
 };
+
+//pm2 deploy deployment.json production|development
