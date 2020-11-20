@@ -1,5 +1,8 @@
 module.exports = {
-  publicPath: process.env.BASE_URL,
+  publicPath:
+    process.env.NODE_ENV === "production"
+      ? "/dashboard/"
+      : process.env.BASE_URL,
   assetsDir: process.env.BASE_URL,
   transpileDependencies: ["vuetify"],
   lintOnSave: process.env.NODE_ENV !== "production",
